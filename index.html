@@ -29,16 +29,16 @@
   --plum:      #2D0F45;
   --orchid:    #7B3FA8;
 
-  --smoke:     #E8E4DC;
-  --ash:       #9A9490;
-  --dust:      #44444f;
+  --smoke:     #F2EDE4;
+  --ash:       #B8B2AB;
+  --dust:      #5C5C78;
 
   --g-gold:    linear-gradient(135deg, #E8C96D 0%, #C9A84C 55%, #8B6914 100%);
   --g-gold2:   linear-gradient(135deg, #C9A84C, #8B6914);
-  --g-purple:  linear-gradient(160deg, #0A0A0F 0%, #2D0F45 55%, #180e22 100%);
+  --g-purple:  linear-gradient(160deg, #0E0E1A 0%, #38105C 55%, #1E0D30 100%);
 
-  --b-gold:    rgba(201,168,76,.12);
-  --b-gold-hi: rgba(201,168,76,.32);
+  --b-gold:    rgba(201,168,76,.22);
+  --b-gold-hi: rgba(201,168,76,.48);
 
   --serif: 'Cormorant Garamond', serif;
   --sans:  'Syne', sans-serif;
@@ -60,7 +60,7 @@ body {
 body::after {
   content:''; position:fixed; inset:0; z-index:8000; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
-  opacity:.5;
+  opacity:.28;
 }
 
 /* ── CURSOR ── */
@@ -314,7 +314,16 @@ nav.scrolled {
   transition:border-color .3s, background .3s;
 }
 .pillar:hover { border-color:var(--b-gold-hi); background:var(--elevated); }
-.pillar-icon { font-size:20px; margin-bottom:10px; display:block; }
+.pillar-icon-wrap {
+  width:38px; height:38px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(201,168,76,.2); border-radius:8px;
+  background:rgba(201,168,76,.07);
+  margin-bottom:14px; color:var(--gold);
+  transition:border-color .3s, background .3s;
+}
+.pillar-icon-wrap svg { width:17px; height:17px; }
+.pillar:hover .pillar-icon-wrap { border-color:rgba(201,168,76,.4); background:rgba(201,168,76,.13); }
 .pillar-name {
   font-family:var(--sans); font-size:.72rem; font-weight:700;
   letter-spacing:.06em; text-transform:uppercase; color:var(--smoke); margin-bottom:4px;
@@ -358,7 +367,15 @@ nav.scrolled {
 /* ═══════════════════════════════════════════════
    SERVICES
 ═══════════════════════════════════════════════ */
-#services { background:var(--obsidian); }
+#services {
+  background:var(--obsidian);
+  position:relative; overflow:hidden;
+}
+#services::before {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:1000px; height:550px; pointer-events:none;
+  background:radial-gradient(ellipse at center top, rgba(201,168,76,.055) 0%, transparent 65%);
+}
 
 .svc-top {
   display:grid; grid-template-columns:1fr 1fr;
@@ -393,7 +410,16 @@ nav.scrolled {
 .svc-card:hover .purple-glow { opacity:1; }
 
 .svc-n { font-family:var(--mono); font-size:.55rem; color:var(--dust); letter-spacing:.15em; position:absolute; top:20px; right:22px; }
-.svc-ico { font-size:24px; margin-bottom:18px; display:block; }
+.svc-ico-wrap {
+  width:48px; height:48px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(201,168,76,.22); border-radius:10px;
+  background:rgba(201,168,76,.07);
+  margin-bottom:22px; color:var(--gold);
+  transition:border-color .3s, background .3s;
+}
+.svc-ico-wrap svg { width:22px; height:22px; }
+.svc-card:hover .svc-ico-wrap { border-color:rgba(201,168,76,.42); background:rgba(201,168,76,.14); }
 .svc-name { font-family:var(--serif); font-size:1.42rem; font-weight:600; line-height:1.12; color:var(--smoke); margin-bottom:10px; }
 .svc-body { font-size:.78rem; font-weight:300; color:var(--ash); line-height:1.78; margin-bottom:18px; }
 .svc-tags { display:flex; flex-wrap:wrap; gap:5px; }
@@ -664,22 +690,22 @@ footer {
       </p>
       <div class="about-pillars reveal">
         <div class="pillar">
-          <span class="pillar-icon">🛡️</span>
+          <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <div class="pillar-name">Seguridad primero</div>
           <div class="pillar-desc">Cada solución se diseña con ciberseguridad desde la base, no como un añadido.</div>
         </div>
         <div class="pillar">
-          <span class="pillar-icon">⚡</span>
+          <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <div class="pillar-name">Resultados rápidos</div>
           <div class="pillar-desc">Implementaciones ágiles con impacto visible desde las primeras semanas.</div>
         </div>
         <div class="pillar">
-          <span class="pillar-icon">🌐</span>
+          <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <div class="pillar-name">Visión regional</div>
           <div class="pillar-desc">Pensamos en Colombia, pero construimos para Latinoamérica.</div>
         </div>
         <div class="pillar">
-          <span class="pillar-icon">🔗</span>
+          <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
           <div class="pillar-name">Ecosistema propio</div>
           <div class="pillar-desc">Productos NexCore que se integran entre sí para potenciar al cliente.</div>
         </div>
@@ -730,7 +756,7 @@ footer {
     <div class="svc-card reveal">
       <div class="purple-glow"></div>
       <span class="svc-n">01</span>
-      <span class="svc-ico">☁️</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
       <div class="svc-name">Cloud &amp; Infraestructura</div>
       <p class="svc-body">Diseño, migración y gestión de infraestructura en la nube y on-premise. Proxmox, Docker, Kubernetes y arquitecturas híbridas para disponibilidad garantizada.</p>
       <div class="svc-tags"><span class="svc-tag">AWS</span><span class="svc-tag">GCP</span><span class="svc-tag">Proxmox</span><span class="svc-tag">Docker</span></div>
@@ -738,7 +764,7 @@ footer {
     <div class="svc-card reveal d1">
       <div class="purple-glow"></div>
       <span class="svc-n">02</span>
-      <span class="svc-ico">🔐</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
       <div class="svc-name">Ciberseguridad</div>
       <p class="svc-body">Análisis de vulnerabilidades, pentesting, hardening de servidores, gestión de identidades y respuesta a incidentes en entornos empresariales.</p>
       <div class="svc-tags"><span class="svc-tag">Pentesting</span><span class="svc-tag">SIEM</span><span class="svc-tag">Zero Trust</span><span class="svc-tag">Kali</span></div>
@@ -746,7 +772,7 @@ footer {
     <div class="svc-card reveal d2">
       <div class="purple-glow"></div>
       <span class="svc-n">03</span>
-      <span class="svc-ico">🎫</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
       <div class="svc-name">GLPI &amp; Mesa de Ayuda</div>
       <p class="svc-body">Implementación completa de GLPI 11 para organizaciones colombianas: helpdesk, inventario de activos, CMDB, SLAs e integraciones corporativas.</p>
       <div class="svc-tags"><span class="svc-tag">GLPI 11</span><span class="svc-tag">ITIL</span><span class="svc-tag">Inventario</span><span class="svc-tag">SLA</span></div>
@@ -754,7 +780,7 @@ footer {
     <div class="svc-card reveal">
       <div class="purple-glow"></div>
       <span class="svc-n">04</span>
-      <span class="svc-ico">⚙️</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
       <div class="svc-name">Automatización &amp; DevOps</div>
       <p class="svc-body">Pipelines CI/CD, scripts de automatización, ETL de datos y gestión de configuración. Eficiencia operativa medible desde el primer mes.</p>
       <div class="svc-tags"><span class="svc-tag">Python</span><span class="svc-tag">CI/CD</span><span class="svc-tag">Ansible</span><span class="svc-tag">ETL</span></div>
@@ -762,7 +788,7 @@ footer {
     <div class="svc-card reveal d1">
       <div class="purple-glow"></div>
       <span class="svc-n">05</span>
-      <span class="svc-ico">📊</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
       <div class="svc-name">Consultoría IT</div>
       <p class="svc-body">Asesoría estratégica en transformación digital, arquitectura de sistemas, evaluación de proveedores y planificación tecnológica alineada al negocio.</p>
       <div class="svc-tags"><span class="svc-tag">Diagnóstico</span><span class="svc-tag">Roadmap</span><span class="svc-tag">Arquitectura</span></div>
@@ -770,7 +796,7 @@ footer {
     <div class="svc-card reveal d2">
       <div class="purple-glow"></div>
       <span class="svc-n">06</span>
-      <span class="svc-ico">🛠️</span>
+      <div class="svc-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
       <div class="svc-name">Desarrollo &amp; Integraciones</div>
       <p class="svc-body">APIs REST, microservicios, aplicaciones web y mobile, integraciones entre sistemas con stack moderno FastAPI + Next.js + PostgreSQL.</p>
       <div class="svc-tags"><span class="svc-tag">FastAPI</span><span class="svc-tag">Next.js</span><span class="svc-tag">PostgreSQL</span></div>
