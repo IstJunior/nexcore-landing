@@ -980,6 +980,52 @@ body, nav, footer,
 }
 </style>
 <script>document.documentElement.dataset.theme=localStorage.getItem('nc-theme')||'dark'</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Contact Form Styles -->
+<style>
+.ct-form { max-width:520px; margin:0 auto 40px; position:relative; z-index:1; }
+.ct-form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.ct-form-group { margin-bottom:16px; }
+.ct-form input, .ct-form textarea, .ct-form select {
+  width:100%; padding:14px 18px;
+  background:var(--graphite); border:1px solid var(--b-gold);
+  border-radius:4px; color:var(--smoke); font-family:var(--sans);
+  font-size:.85rem; transition:border-color .2s, background .3s;
+}
+.ct-form input:focus, .ct-form textarea:focus, .ct-form select:focus {
+  outline:none; border-color:var(--gold); background:var(--elevated);
+}
+.ct-form textarea { min-height:120px; resize:vertical; }
+.ct-form input::placeholder, .ct-form textarea::placeholder { color:var(--dust); }
+.ct-form select { cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A84C' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; }
+.ct-form select option { background:var(--carbon); color:var(--smoke); }
+.ct-form .btn-submit {
+  width:100%; padding:16px; background:var(--g-gold2); color:#0e0900;
+  border:none; border-radius:4px; font-family:var(--sans); font-weight:700;
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; cursor:none;
+  transition:opacity .2s, transform .2s;
+}
+.ct-form .btn-submit:hover { opacity:.87; transform:translateY(-2px); }
+.ct-form-success {
+  display:none; text-align:center; padding:40px 20px;
+  background:var(--graphite); border:1px solid var(--b-gold); border-radius:8px;
+}
+.ct-form-success.show { display:block; }
+.ct-form-success svg { width:48px; height:48px; color:var(--gold); margin-bottom:16px; }
+.ct-form-success h3 { font-family:var(--serif); font-size:1.5rem; color:var(--smoke); margin-bottom:8px; }
+.ct-form-success p { font-size:.9rem; color:var(--ash); }
+@media (max-width:768px) { .ct-form-row { grid-template-columns:1fr; } }
+</style>
+
 </head>
 <body>
 
@@ -1323,6 +1369,49 @@ body, nav, footer,
 
   <p class="ct-sub reveal">Cuéntanos tu desafío tecnológico. Hacemos un diagnóstico inicial sin costo y te presentamos una propuesta a la medida de tu organización.</p>
 
+  <form class="ct-form reveal" id="contactForm" action="https://formspree.io/f/xxxxxxxxx" method="POST">
+    <div class="ct-form-row">
+      <div class="ct-form-group">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="ct-form-group">
+        <input type="text" name="empresa" placeholder="Nombre de tu empresa" required>
+      </div>
+    </div>
+    <div class="ct-form-row">
+      <div class="ct-form-group">
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      </div>
+      <div class="ct-form-group">
+        <input type="tel" name="telefono" placeholder="Tu teléfono">
+      </div>
+    </div>
+    <div class="ct-form-group">
+      <select name="servicio" required>
+        <option value="">¿Qué servicio te interesa?</option>
+        <option value="cloud">Cloud e Infraestructura</option>
+        <option value="seguridad">Ciberseguridad</option>
+        <option value="glpi">GLPI y Mesa de Ayuda</option>
+        <option value="automatizacion">Automatización y DevOps</option>
+        <option value="consultoria">Consultoría IT</option>
+        <option value="desarrollo">Desarrollo e Integraciones</option>
+        <option value="parkflux">ParkFlux</option>
+        <option value="nexbot">NexBot</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+    <div class="ct-form-group">
+      <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto o desafío tecnológico..." required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+  </form>
+  
+  <div class="ct-form-success" id="formSuccess">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <h3>¡Mensaje Enviado!</h3>
+    <p>Gracias por contactarnos. Te escribiremos en menos de 24 horas.</p>
+  </div>
+
   <div class="ct-btns reveal">
     <a href="mailto:contacto@nexcore.co" class="btn-primary">Agendar Diagnóstico Gratuito</a>
     <a href="tel:+57300000000" class="btn-ghost">Llamar Ahora</a>
@@ -1444,6 +1533,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+// Contact Form Handler
+(function(){
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        btn.textContent = 'Error. Intenta de nuevo';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Error. Intenta de nuevo';
+      btn.disabled = false;
+    }
   });
 })();
 </script>
