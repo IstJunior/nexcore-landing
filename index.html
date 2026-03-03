@@ -619,6 +619,71 @@ footer {
 [data-theme="light"] .btn-theme-toggle .ico-moon { display:none; }
 [data-theme="light"] .btn-theme-toggle .ico-sun  { display:flex; }
 
+/* ═══════════════════════════════════════════════
+    PROGRESS INDICATOR
+══════════════════════════════════════════════════ */
+.nc-progress {
+  position:fixed; top:0; left:0; height:3px;
+  background:var(--g-gold);
+  z-index:9999; width:0%;
+  transition:width .1s;
+}
+[data-theme="light"] .nc-progress { background:linear-gradient(90deg, #C9A84C, #8B6914); }
+
+/* ═══════════════════════════════════════════════
+    FLOATING BUTTONS
+══════════════════════════════════════════════════ */
+.nc-float-btns {
+  position:fixed; bottom:28px; right:28px;
+  display:flex; flex-direction:column; gap:14px;
+  z-index:550;
+}
+.nc-float-btn {
+  width:52px; height:52px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+  transition:transform .25s, box-shadow .25s;
+}
+.nc-float-btn:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(0,0,0,.45); }
+.nc-float-btn svg { width:24px; height:24px; }
+
+.nc-float-wa {
+  background:#25D366; color:#fff;
+}
+.nc-float-wa:hover { background:#20BD5A; }
+
+.nc-float-top {
+  background:var(--graphite); border:1px solid var(--b-gold);
+  color:var(--gold); opacity:0; pointer-events:none;
+  transition:opacity .3s, transform .25s, background .3s;
+}
+.nc-float-top.visible { opacity:1; pointer-events:auto; }
+.nc-float-top:hover { background:var(--elevated); }
+
+@media (max-width:768px) {
+  .nc-float-btns { bottom:18px; right:18px; }
+  .nc-float-btn { width:48px; height:48px; }
+}
+
+/* ═══════════════════════════════════════════════
+    TOOLTIPS
+══════════════════════════════════════════════ */
+.nc-tooltip {
+  position:relative;
+}
+.nc-tooltip::after {
+  content:attr(data-tooltip);
+  position:absolute; bottom:100%; left:50%; transform:translateX(-50%) translateY(-8px);
+  background:var(--elevated); border:1px solid var(--b-gold);
+  color:var(--smoke); font-family:var(--mono); font-size:.6rem;
+  padding:6px 12px; border-radius:4px; white-space:nowrap;
+  opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;
+  z-index:100;
+}
+.nc-tooltip:hover::after { opacity:1; transform:translateX(-50%) translateY(-4px); }
+
 /* ── Transición suave al cambiar tema ── */
 body, nav, footer,
 #about, #services, #products, #stats, #contact,
@@ -777,7 +842,42 @@ body, nav, footer,
   /* ── NAV ── */
   nav { padding:18px 20px; }
   nav.scrolled { padding:14px 20px; }
-  .nav-links { display:none; }
+  
+  /* Mobile menu hamburger */
+  .nav-mobile-toggle { display:none; }
+  .nav-mobile-menu {
+    display:none;
+    position:fixed; inset:0; z-index:650;
+    background:rgba(10,10,15,.98);
+    flex-direction:column; align-items:center; justify-content:center;
+    gap:32px; opacity:0; pointer-events:none;
+    transition:opacity .35s;
+  }
+  .nav-mobile-menu.open { opacity:1; pointer-events:auto; }
+  .nav-mobile-menu a {
+    font-family:var(--mono); font-size:1.1rem; font-weight:600;
+    letter-spacing:.2em; text-transform:uppercase;
+    color:var(--smoke); text-decoration:none;
+    transition:color .2s;
+  }
+  .nav-mobile-menu a:hover { color:var(--gold); }
+  
+  @media (max-width:768px) {
+    .nav-mobile-toggle {
+      display:flex; flex-direction:column; gap:6px;
+      width:32px; height:32px; align-items:center; justify-content:center;
+      background:none; border:none; cursor:pointer; z-index:700;
+    }
+    .nav-mobile-toggle span {
+      display:block; width:22px; height:2px; background:var(--smoke);
+      transition:transform .25s, opacity .25s;
+    }
+    .nav-mobile-toggle.open span:nth-child(1) { transform:translateY(8px) rotate(45deg); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity:0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform:translateY(-8px) rotate(-45deg); }
+    .nav-links { display:none; }
+    .nav-mobile-menu { display:flex; }
+  }
   .btn-nav { padding:9px 18px; font-size:.6rem; }
 
   /* ── HERO ── */
@@ -874,6 +974,19 @@ body, nav, footer,
 <div class="nc-cur" id="cur"></div>
 <div class="nc-ring" id="ring"></div>
 
+<!-- Progress Indicator -->
+<div class="nc-progress" id="progress"></div>
+
+<!-- Floating Buttons -->
+<div class="nc-float-btns">
+  <a href="https://wa.me/573000000000" class="nc-float-btn nc-float-wa nc-tooltip" data-tooltip="Escríbenos" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <button class="nc-float-btn nc-float-top nc-tooltip" data-tooltip="Volver arriba" id="btnTop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+</div>
+
 <!-- ═══════════ NAV ═══════════ -->
 <nav id="nav">
   <a href="#hero" class="nav-brand">
@@ -896,8 +1009,20 @@ body, nav, footer,
       <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     </button>
     <a href="#contact" class="btn-nav">Cotizar ahora</a>
+    <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Full Menu -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-menu-link">Nosotros</a>
+  <a href="#services" class="mobile-menu-link">Servicios</a>
+  <a href="#products" class="mobile-menu-link">Productos</a>
+  <a href="#contact" class="mobile-menu-link">Contacto</a>
+  <a href="#contact" class="btn-primary mobile-menu-cta">Cotizar ahora</a>
+</div>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section id="hero">
@@ -1252,6 +1377,51 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   // Add cursor hover to toggle button
   btn.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big'); });
   btn.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
+})();
+
+// Mobile Menu Toggle
+(function(){
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  const links = menu.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+// Progress Indicator
+(function(){
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progress.style.width = scrolled + '%';
+  });
+})();
+
+// Floating Top Button
+(function(){
+  const btn = document.getElementById('btnTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 })();
 </script>
 </body>
