@@ -21,23 +21,23 @@
     content="tecnología Colombia, ciberseguridad, cloud computing, infraestructura IT, GLPI, automatización, inteligencia artificial, parqueaderos inteligentes, chatbot IA, consultoría IT">
   <meta name="author" content="NexCore">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nexcore.com.co">
+  <link rel="canonical" href="https://nexcoreia.com">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nexcore.com.co/">
+  <meta property="og:url" content="https://nexcoreia.com/">
   <meta property="og:title" content="NexCore — Tecnología que impulsa tu negocio">
   <meta property="og:description"
     content="Infraestructura, ciberseguridad, nube, automatización y productos propios con IA para transformar tu empresa en Colombia y Latinoamérica.">
-  <meta property="og:image" content="https://nexcore.com.co/og-image.jpg">
+  <meta property="og:image" content="https://nexcoreia.com/og-image.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://nexcore.com.co/">
+  <meta name="twitter:url" content="https://nexcoreia.com/">
   <meta name="twitter:title" content="NexCore — Tecnología que impulsa tu negocio">
   <meta name="twitter:description"
     content="Infraestructura, ciberseguridad, nube, automatización y productos propios con IA para transformar tu empresa.">
-  <meta name="twitter:image" content="https://nexcore.com.co/og-image.jpg">
+  <meta name="twitter:image" content="https://nexcoreia.com/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
@@ -53,16 +53,19 @@
     @font-face {
       font-family: 'Cormorant Garamond';
       font-display: swap;
+      src: local('Cormorant Garamond');
     }
 
     @font-face {
       font-family: 'Syne';
       font-display: swap;
+      src: local('Syne');
     }
 
     @font-face {
       font-family: 'JetBrains Mono';
       font-display: swap;
+      src: local('JetBrains Mono');
     }
 
     /* ═══════════════════════════════════════════════
@@ -189,7 +192,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 26px 64px;
+      padding: 26px max(64px, calc((100vw - 1280px) / 2));
       transition: background .4s, padding .3s, border-color .4s;
       border-bottom: 1px solid transparent;
     }
@@ -198,7 +201,7 @@
       background: rgba(10, 10, 15, .96);
       backdrop-filter: blur(20px);
       border-bottom-color: var(--b-gold);
-      padding: 16px 64px;
+      padding: 16px max(64px, calc((100vw - 1280px) / 2));
     }
 
     .nav-brand {
@@ -281,7 +284,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 130px 64px 90px;
+      padding: 130px max(64px, calc((100vw - 1280px) / 2)) 90px;
       position: relative;
       overflow: hidden;
       background: var(--g-purple);
@@ -398,7 +401,7 @@
     /* Headline */
     .hero-h1 {
       font-family: var(--sans);
-      font-size: clamp(46px, 7vw, 96px);
+      font-size: 96px;
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -.03em;
@@ -534,7 +537,7 @@
    SHARED
 ═══════════════════════════════════════════════ */
     .sec {
-      padding: 120px 64px;
+      padding: 120px max(64px, calc((100vw - 1280px) / 2));
     }
 
     .eyebrow {
@@ -559,7 +562,7 @@
 
     .sh2 {
       font-family: var(--serif);
-      font-size: clamp(42px, 5.5vw, 76px);
+      font-size: 76px;
       font-weight: 700;
       line-height: .93;
       letter-spacing: -.01em;
@@ -646,10 +649,6 @@
       gap: 100px;
       align-items: center;
     }
-
-    .about-left {}
-
-    .about-right {}
 
     .about-lead {
       font-family: var(--serif);
@@ -778,7 +777,7 @@
     .about-num-n {
       font-family: var(--serif);
       font-weight: 700;
-      font-size: clamp(44px, 5vw, 64px);
+      font-size: 64px;
       line-height: 1;
       background: var(--g-gold);
       -webkit-background-clip: text;
@@ -1047,7 +1046,7 @@
     .prod-vis-label {
       font-family: var(--serif);
       font-weight: 700;
-      font-size: clamp(44px, 7vw, 84px);
+      font-size: 84px;
       line-height: 1.05;
       text-align: center;
       padding: 24px;
@@ -1102,7 +1101,7 @@
 
     .prod-name {
       font-family: var(--serif);
-      font-size: clamp(38px, 5vw, 62px);
+      font-size: 62px;
       font-weight: 700;
       line-height: .93;
       color: var(--smoke);
@@ -1157,7 +1156,7 @@
 ═══════════════════════════════════════════════ */
     #stats {
       background: var(--gold);
-      padding: 80px 64px;
+      padding: 80px max(64px, calc((100vw - 1280px) / 2));
     }
 
     .stats-row {
@@ -1201,7 +1200,7 @@
     #contact {
       background: var(--g-purple);
       text-align: center;
-      padding: 140px 64px;
+      padding: 140px max(64px, calc((100vw - 1280px) / 2));
       position: relative;
       overflow: hidden;
     }
@@ -1256,7 +1255,7 @@
 
     .ct-title {
       font-family: var(--serif);
-      font-size: clamp(56px, 9.5vw, 120px);
+      font-size: 120px;
       font-weight: 700;
       line-height: .9;
       margin-bottom: 30px;
@@ -1322,7 +1321,7 @@
     footer {
       background: var(--carbon);
       border-top: 1px solid var(--b-gold);
-      padding: 38px 64px;
+      padding: 38px max(64px, calc((100vw - 1280px) / 2));
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -2325,20 +2324,8 @@
         </svg>
       </button>
       <a href="#contact" class="btn-nav">Cotizar ahora</a>
-      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
-
-  <!-- Mobile Full Menu -->
-  <div class="nav-mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-menu-link">Nosotros</a>
-    <a href="#services" class="mobile-menu-link">Servicios</a>
-    <a href="#products" class="mobile-menu-link">Productos</a>
-    <a href="#contact" class="mobile-menu-link">Contacto</a>
-    <a href="#contact" class="btn-primary mobile-menu-cta">Cotizar ahora</a>
-  </div>
 
   <!-- ═══════════ HERO ═══════════ -->
   <section id="hero">
@@ -2811,25 +2798,6 @@
       // Add cursor hover to toggle button
       btn.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big'); });
       btn.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
-    })();
-
-    // Mobile Menu Toggle
-    (function () {
-      const toggle = document.getElementById('mobileToggle');
-      const menu = document.getElementById('mobileMenu');
-      const links = menu.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('open');
-        menu.classList.toggle('open');
-        document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-      });
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.classList.remove('open');
-          menu.classList.remove('open');
-          document.body.style.overflow = '';
-        });
-      });
     })();
 
     // Progress Indicator

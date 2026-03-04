@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexcore.com.co/sitemap.xml
+Sitemap: https://nexcoreia.com/sitemap.xml
