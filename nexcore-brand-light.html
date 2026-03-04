@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexCore — Tema Claro</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap');
+
+  :root {
+    /* ── LIGHT THEME BASE ── */
+    --cream:        #F7F4EF;   /* Fondo principal */
+    --ivory:        #EDE9E0;   /* Fondo secundario */
+    --pearl:        #E2DDD4;   /* Bordes, separadores */
+    --linen:        #F0EDE8;   /* Cards, superficies */
+    --warm-white:   #FAF8F5;   /* Elevado / hover */
+
+    /* ── DORADOS (adaptados a claro) ── */
+    --gold-deep:    #8B6914;   /* Dorado oscuro — principal en claro */
+    --gold-mid:     #A07D3A;   /* Dorado medio */
+    --gold-pure:    #C9A84C;   /* Dorado vivo */
+    --gold-light:   #E8C96D;   /* Dorado claro — detalles */
+    --gold-subtle:  #F0DFA0;   /* Dorado muy suave — backgrounds */
+
+    /* ── MORADOS (adaptados a claro) ── */
+    --plum-deep:    #2D0F45;   /* Texto display premium */
+    --amethyst:     #4A1C6B;   /* Texto secundario oscuro */
+    --violet:       #6B2D96;   /* Acentos, badges */
+    --orchid:       #9B5BC8;   /* Estados hover morado */
+    --lavender:     #E8D5F8;   /* Backgrounds morado suave */
+    --mist:         #F3ECFB;   /* Micro-backgrounds */
+
+    /* ── TEXTOS ── */
+    --ink:          #1A1520;   /* Texto principal */
+    --charcoal:     #3D3545;   /* Texto secundario */
+    --slate:        #6B6478;   /* Texto de apoyo */
+    --fog:          #A09AAC;   /* Placeholders */
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    padding: 60px 40px;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; top: -150px; right: -150px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(74,28,107,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  body::after {
+    content: '';
+    position: fixed; bottom: -150px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .wrapper { max-width: 1000px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  header { margin-bottom: 80px; }
+  .logo-lockup { display: flex; align-items: center; gap: 18px; margin-bottom: 14px; }
+  .wordmark {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem; font-weight: 800;
+    letter-spacing: -0.02em; line-height: 1;
+    color: var(--ink);
+  }
+  .wordmark .x {
+    background: linear-gradient(135deg, var(--gold-pure) 0%, var(--gold-deep) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .doc-subtitle {
+    font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--slate);
+  }
+  .divider {
+    height: 1px; margin-top: 28px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--amethyst) 50%, transparent);
+    opacity: 0.35;
+  }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 72px; }
+  .section-label {
+    font-size: 0.63rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold-mid); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(139,105,20,0.25), transparent);
+  }
+
+  /* ── MAIN PALETTE ── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1fr;
+    gap: 3px; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 40px rgba(45,15,69,0.08);
+  }
+  .swatch {
+    padding: 44px 26px 30px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    min-height: 230px; transition: transform 0.3s ease; cursor: default;
+  }
+  .swatch:hover { transform: translateY(-5px); z-index: 2; }
+  .swatch .role  { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 7px; }
+  .swatch .name  { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 5px; }
+  .swatch .hex   { font-family: monospace; font-size: 0.72rem; letter-spacing: 0.1em; }
+  .swatch .desc  { font-size: 0.66rem; line-height: 1.5; margin-top: 10px; }
+
+  .s-cream    { background: var(--cream); border: 1px solid var(--pearl); }
+  .s-cream .role, .s-cream .hex, .s-cream .desc { color: var(--slate); }
+  .s-cream .name { color: var(--ink); }
+
+  .s-gold-d   { background: var(--gold-deep); }
+  .s-gold-d .role, .s-gold-d .hex, .s-gold-d .desc { color: rgba(250,248,245,0.7); }
+  .s-gold-d .name { color: var(--warm-white); }
+
+  .s-plum     { background: var(--plum-deep); }
+  .s-plum .role, .s-plum .hex, .s-plum .desc { color: rgba(232,213,248,0.6); }
+  .s-plum .name { color: #E8D5F8; }
+
+  .s-linen    { background: var(--linen); border: 1px solid var(--pearl); }
+  .s-linen .role, .s-linen .hex, .s-linen .desc { color: var(--slate); }
+  .s-linen .name { color: var(--charcoal); }
+
+  /* ── NEUTRALS ROW ── */
+  .neutrals-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 3px; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 24px rgba(45,15,69,0.06);
+  }
+  .neutral-chip {
+    padding: 28px 18px 20px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    cursor: default; transition: transform 0.3s;
+  }
+  .neutral-chip:hover { transform: translateY(-4px); z-index: 2; }
+  .neutral-chip .nc-role { font-size: 0.54rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 5px; }
+  .neutral-chip .nc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 3px; }
+  .neutral-chip .nc-hex  { font-family: monospace; font-size: 0.65rem; }
+
+  /* ── SHADE COMPARE ── */
+  .compare-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 3px; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 24px rgba(45,15,69,0.06);
+  }
+  .compare-col { padding: 32px; }
+  .compare-col h3 {
+    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .shade-strip { display: flex; border-radius: 8px; overflow: hidden; height: 52px; margin-bottom: 8px; }
+  .shade-chip  { flex: 1; position: relative; transition: flex 0.3s ease; cursor: default; }
+  .shade-chip:hover { flex: 2.2; }
+  .chip-hex {
+    position: absolute; bottom: 5px; left: 6px;
+    font-family: monospace; font-size: 0.52rem; white-space: nowrap;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .shade-chip:hover .chip-hex { opacity: 1; }
+  .shade-note { font-size: 0.65rem; margin-top: 4px; }
+
+  /* ── USE CASES ── */
+  .use-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .use-card {
+    background: var(--warm-white);
+    border: 1px solid var(--pearl);
+    border-radius: 12px; padding: 26px 22px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 12px rgba(45,15,69,0.04);
+  }
+  .use-card:hover { border-color: rgba(139,105,20,0.4); box-shadow: 0 4px 24px rgba(139,105,20,0.08); }
+  .uc-head { display: flex; align-items: center; gap: 11px; margin-bottom: 14px; }
+  .color-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
+  .uc-title { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--charcoal); }
+  .use-card p { font-size: 0.75rem; line-height: 1.7; color: var(--slate); }
+
+  /* ── PREVIEW ── */
+  .preview-wrap {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--pearl);
+    box-shadow: 0 8px 48px rgba(45,15,69,0.1);
+  }
+  .preview-nav {
+    background: var(--warm-white);
+    padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--pearl);
+  }
+  .nav-brand-w {
+    font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800;
+    letter-spacing: -0.01em; color: var(--ink);
+  }
+  .nav-brand-w .x {
+    background: linear-gradient(135deg, var(--gold-pure), var(--gold-deep));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav-links span {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--slate); margin-left: 28px; cursor: default; transition: color 0.2s;
+  }
+  .nav-links span:hover { color: var(--gold-deep); }
+
+  .preview-hero {
+    padding: 72px 52px;
+    background: linear-gradient(135deg, var(--cream) 0%, #EDE0F5 55%, var(--ivory) 100%);
+    position: relative; overflow: hidden;
+  }
+  .preview-hero::before {
+    content: '';
+    position: absolute; top: -80px; right: -60px;
+    width: 340px; height: 340px;
+    background: radial-gradient(circle, rgba(139,105,20,0.08), transparent 70%);
+  }
+  .preview-hero::after {
+    content: '';
+    position: absolute; bottom: -60px; left: 38%;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(107,45,150,0.07), transparent 70%);
+  }
+  .hero-eyebrow {
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold-deep); margin-bottom: 22px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold-deep); }
+  .preview-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 700; line-height: 1.12;
+    max-width: 520px; margin-bottom: 22px; color: var(--plum-deep);
+  }
+  .preview-hero h2 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--gold-pure), var(--gold-deep));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .preview-hero p {
+    font-size: 0.88rem; color: var(--charcoal);
+    max-width: 400px; line-height: 1.75; margin-bottom: 40px;
+  }
+  .hero-btns { display: flex; gap: 14px; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-pure), var(--gold-deep));
+    color: var(--warm-white); border: none;
+    padding: 14px 34px; border-radius: 6px;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(139,105,20,0.3);
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent; color: var(--amethyst);
+    border: 1.5px solid rgba(74,28,107,0.3);
+    padding: 14px 34px; border-radius: 6px;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer; transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--amethyst); background: rgba(74,28,107,0.05); }
+
+  /* ── SIDE BY SIDE ── */
+  .side-label {
+    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--slate); margin-bottom: 16px; text-align: center;
+  }
+  .side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 32px rgba(45,15,69,0.1); }
+
+  .side-dark {
+    background: #0A0A0F; padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .side-light {
+    background: var(--cream); padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+    border: 1px solid var(--pearl);
+  }
+
+  .mini-card-dark {
+    background: #1C1C28; border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 8px; padding: 16px;
+  }
+  .mini-card-light {
+    background: var(--warm-white); border: 1px solid var(--pearl);
+    border-radius: 8px; padding: 16px;
+    box-shadow: 0 2px 10px rgba(45,15,69,0.05);
+  }
+  .mc-label { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px; }
+  .mc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 4px; }
+  .mc-sub   { font-size: 0.72rem; line-height: 1.5; }
+  .mc-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 100px;
+    font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px;
+  }
+  .badge-dark-gold  { background: rgba(201,168,76,0.15); color: #C9A84C; border: 1px solid rgba(201,168,76,0.25); }
+  .badge-dark-plum  { background: rgba(74,28,107,0.3);  color: #9B5BC8; border: 1px solid rgba(107,45,150,0.4); }
+  .badge-light-gold { background: rgba(139,105,20,0.1); color: #8B6914; border: 1px solid rgba(139,105,20,0.2); }
+  .badge-light-plum { background: rgba(74,28,107,0.08); color: #6B2D96; border: 1px solid rgba(107,45,150,0.2); }
+
+  /* ── PROP ── */
+  .prop-card {
+    background: var(--warm-white); border: 1px solid var(--pearl);
+    border-radius: 14px; padding: 40px;
+    display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: center;
+    box-shadow: 0 4px 24px rgba(45,15,69,0.06);
+  }
+  .prop-title { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-deep); margin-bottom: 10px; }
+  .prop-desc  { font-size: 0.76rem; color: var(--slate); line-height: 1.7; }
+  .prop-bars  { display: flex; flex-direction: column; gap: 10px; }
+  .prop-bar   { border-radius: 6px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+  .pb-label   { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; }
+  .pb-pct     { font-size: 1.1rem; font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-lockup">
+      <svg width="52" height="52" viewBox="0 0 56 56" fill="none">
+        <polygon points="28,2 52,15 52,41 28,54 4,41 4,15" fill="url(#hgL)"/>
+        <line x1="18" y1="18" x2="38" y2="38" stroke="#FAF8F5" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="38" y1="18" x2="18" y2="38" stroke="#FAF8F5" stroke-width="3.5" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="hgL" x1="4" y1="2" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C9A84C"/>
+            <stop offset="100%" stop-color="#8B6914"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="wordmark">Ne<span class="x">x</span>Core</div>
+    </div>
+    <div class="doc-subtitle">Manual de Identidad Visual — Tema Claro v1.0</div>
+    <div class="divider"></div>
+  </header>
+
+  <!-- 01 COLORES PRINCIPALES -->
+  <section class="section">
+    <div class="section-label">01 — Colores Primarios · Tema Claro</div>
+    <div class="palette-grid">
+      <div class="swatch s-cream">
+        <div class="role" style="color:var(--slate)">Base Principal</div>
+        <div class="name">Cream</div>
+        <div class="hex" style="color:var(--slate)">#F7F4EF</div>
+        <div class="desc">Fondo principal. Blanco cálido con micromatiz dorado que evita la frialdad del blanco puro. Sofisticado sin esfuerzo.</div>
+      </div>
+      <div class="swatch s-gold-d">
+        <div class="role">Acento Primario</div>
+        <div class="name">Rich Gold</div>
+        <div class="hex">#8B6914</div>
+        <div class="desc">Dorado oscuro — el color de acción en tema claro. Legible, elegante y autoritario.</div>
+      </div>
+      <div class="swatch s-plum">
+        <div class="role">Acento Secundario</div>
+        <div class="name">Deep Plum</div>
+        <div class="hex">#2D0F45</div>
+        <div class="desc">Texto display premium y acentos estructurales. La oscuridad del morado funciona perfectamente en claro.</div>
+      </div>
+      <div class="swatch s-linen">
+        <div class="role">Superficie</div>
+        <div class="name">Linen</div>
+        <div class="hex">#F0EDE8</div>
+        <div class="desc">Cards y paneles. Separa sin contraste agresivo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 NEUTRALES -->
+  <section class="section">
+    <div class="section-label">02 — Paleta de Neutrales Cálidos</div>
+    <div class="neutrals-grid">
+      <div class="neutral-chip" style="background:#FAF8F5">
+        <div class="nc-role" style="color:var(--fog)">Elevado</div>
+        <div class="nc-name" style="color:var(--charcoal)">Warm White</div>
+        <div class="nc-hex" style="color:var(--fog)">#FAF8F5</div>
+      </div>
+      <div class="neutral-chip" style="background:#F7F4EF">
+        <div class="nc-role" style="color:var(--fog)">Base</div>
+        <div class="nc-name" style="color:var(--charcoal)">Cream</div>
+        <div class="nc-hex" style="color:var(--fog)">#F7F4EF</div>
+      </div>
+      <div class="neutral-chip" style="background:#F0EDE8">
+        <div class="nc-role" style="color:var(--slate)">Superficies</div>
+        <div class="nc-name" style="color:var(--charcoal)">Linen</div>
+        <div class="nc-hex" style="color:var(--slate)">#F0EDE8</div>
+      </div>
+      <div class="neutral-chip" style="background:#EDE9E0">
+        <div class="nc-role" style="color:var(--slate)">Secundario</div>
+        <div class="nc-name" style="color:var(--charcoal)">Ivory</div>
+        <div class="nc-hex" style="color:var(--slate)">#EDE9E0</div>
+      </div>
+      <div class="neutral-chip" style="background:#E2DDD4">
+        <div class="nc-role" style="color:var(--charcoal)">Bordes</div>
+        <div class="nc-name" style="color:var(--charcoal)">Pearl</div>
+        <div class="nc-hex" style="color:var(--charcoal)">#E2DDD4</div>
+      </div>
+    </div>
+    <p style="font-size:0.68rem;color:var(--fog);margin-top:10px;text-align:center">Todos los neutrales tienen el mismo micromatiz cálido — nunca se mezclan con blancos o grises fríos</p>
+  </section>
+
+  <!-- 03 ESCALAS -->
+  <section class="section">
+    <div class="section-label">03 — Escalas de Color</div>
+    <div class="compare-wrap">
+      <div class="compare-col" style="background:var(--linen)">
+        <h3 style="color:var(--slate)">Escala Dorados</h3>
+        <div class="shade-strip">
+          <div class="shade-chip" style="background:#F5E4AA"><span class="chip-hex" style="color:#888">#F5E4AA</span></div>
+          <div class="shade-chip" style="background:#E8C96D"><span class="chip-hex" style="color:#666">#E8C96D</span></div>
+          <div class="shade-chip" style="background:#C9A84C"><span class="chip-hex" style="color:#333">#C9A84C</span></div>
+          <div class="shade-chip" style="background:#A07D3A"><span class="chip-hex" style="color:#eee">#A07D3A</span></div>
+          <div class="shade-chip" style="background:#8B6914"><span class="chip-hex" style="color:#eee">#8B6914</span></div>
+          <div class="shade-chip" style="background:#4A3010"><span class="chip-hex" style="color:#eee">#4A3010</span></div>
+        </div>
+        <div class="shade-note" style="color:var(--fog)">#8B6914 como acción · #C9A84C como acento decorativo</div>
+      </div>
+      <div class="compare-col" style="background:var(--ivory)">
+        <h3 style="color:var(--slate)">Escala Morados</h3>
+        <div class="shade-strip">
+          <div class="shade-chip" style="background:#F3ECFB"><span class="chip-hex" style="color:#888">#F3ECFB</span></div>
+          <div class="shade-chip" style="background:#E8D5F8"><span class="chip-hex" style="color:#888">#E8D5F8</span></div>
+          <div class="shade-chip" style="background:#9B5BC8"><span class="chip-hex" style="color:#eee">#9B5BC8</span></div>
+          <div class="shade-chip" style="background:#6B2D96"><span class="chip-hex" style="color:#eee">#6B2D96</span></div>
+          <div class="shade-chip" style="background:#4A1C6B"><span class="chip-hex" style="color:#eee">#4A1C6B</span></div>
+          <div class="shade-chip" style="background:#2D0F45"><span class="chip-hex" style="color:#eee">#2D0F45</span></div>
+        </div>
+        <div class="shade-note" style="color:var(--fog)">#2D0F45 como texto premium · claros para backgrounds suaves</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TEXTOS -->
+  <section class="section">
+    <div class="section-label">04 — Jerarquía de Textos</div>
+    <div style="background:var(--warm-white);border:1px solid var(--pearl);border-radius:14px;padding:40px;box-shadow:0 4px 24px rgba(45,15,69,0.06)">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <div>
+          <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);margin-bottom:12px">Principal</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#1A1520;line-height:1.1">Ink<br>#1A1520</div>
+          <div style="font-size:0.7rem;color:var(--fog);margin-top:8px">Títulos, texto principal, headings</div>
+        </div>
+        <div>
+          <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);margin-bottom:12px">Secundario</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#3D3545;line-height:1.1">Charcoal<br>#3D3545</div>
+          <div style="font-size:0.7rem;color:var(--fog);margin-top:8px">Subtítulos, párrafos de apoyo</div>
+        </div>
+        <div>
+          <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);margin-bottom:12px">Apoyo</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#6B6478;line-height:1.1">Slate<br>#6B6478</div>
+          <div style="font-size:0.7rem;color:var(--fog);margin-top:8px">Metadata, captions, fechas</div>
+        </div>
+        <div>
+          <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fog);margin-bottom:12px">Placeholder</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#A09AAC;line-height:1.1">Fog<br>#A09AAC</div>
+          <div style="font-size:0.7rem;color:var(--fog);margin-top:8px">Placeholders, texto inactivo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 USE CASES -->
+  <section class="section">
+    <div class="section-label">05 — Guía de Uso</div>
+    <div class="use-grid">
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#8B6914"></div><div class="uc-title">Rich Gold</div></div>
+        <p>Botones CTA, links de acción, íconos activos, precios, métricas clave, bordes de enfoque en formularios, la "x" del logotipo.</p>
+      </div>
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#2D0F45"></div><div class="uc-title">Deep Plum</div></div>
+        <p>Títulos de hero, headings de alto impacto, texto display en secciones premium. Da el peso y sofisticación que el negro puro no transmite.</p>
+      </div>
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#F7F4EF"></div><div class="uc-title">Cream</div></div>
+        <p>Fondo principal. Nunca usar blanco puro #FFFFFF — destruye la calidez premium. Cream mantiene la elegancia en todo el sistema.</p>
+      </div>
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#F0EDE8"></div><div class="uc-title">Linen</div></div>
+        <p>Cards, paneles, tablas, formularios. Separa el contenido del fondo con sutileza. Usar con sombras muy suaves en lugar de bordes gruesos.</p>
+      </div>
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#6B2D96"></div><div class="uc-title">Violet</div></div>
+        <p>Badges de categoría, estados especiales, highlights secundarios, acentos en ilustraciones y fondos de secciones alternadas con baja opacidad.</p>
+      </div>
+      <div class="use-card">
+        <div class="uc-head"><div class="color-dot" style="background:#E2DDD4"></div><div class="uc-title">Pearl</div></div>
+        <p>Bordes, divisores, líneas separadoras. Usar en lugar de grises fríos para mantener la temperatura cálida del sistema en todos los detalles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 PREVIEW -->
+  <section class="section">
+    <div class="section-label">06 — Preview en Contexto</div>
+    <div class="preview-wrap">
+      <div class="preview-nav">
+        <div class="nav-brand-w">Ne<span class="x">x</span>Core</div>
+        <div class="nav-links">
+          <span>Plataforma</span>
+          <span>Precios</span>
+          <span>Docs</span>
+        </div>
+        <button class="btn-primary" style="padding:10px 22px;font-size:0.65rem">Comenzar</button>
+      </div>
+      <div class="preview-hero">
+        <div class="hero-eyebrow">Plataforma IA Multi-tenant</div>
+        <h2>El <em>próximo nivel</em> de automatización para tu empresa</h2>
+        <p>NexCore conecta tu negocio con la inteligencia artificial. Chatbots, knowledge bases y automatización desde un solo núcleo.</p>
+        <div class="hero-btns">
+          <button class="btn-primary">Prueba gratis</button>
+          <button class="btn-secondary">Ver demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 SIDE BY SIDE -->
+  <section class="section">
+    <div class="section-label">07 — Comparación Dark vs Light</div>
+    <div class="side-grid">
+      <div>
+        <div class="side-label" style="color:#444">◼ Tema Oscuro</div>
+        <div class="side-dark">
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#E8E4DC">Ne<span style="background:linear-gradient(135deg,#E8C96D,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">x</span>Core</div>
+          <div class="mini-card-dark">
+            <div class="mc-label" style="color:#9A9490">Plan Enterprise</div>
+            <div class="mc-title" style="color:#E8E4DC">Automatización IA</div>
+            <div class="mc-sub" style="color:#9A9490">Conecta tu equipo con modelos de lenguaje avanzados.</div>
+            <div class="mc-badge badge-dark-gold">Premium</div>
+            <div class="mc-badge badge-dark-plum" style="margin-left:6px">IA Avanzada</div>
+          </div>
+          <button style="background:linear-gradient(135deg,#C9A84C,#8B6914);color:#0e0900;border:none;padding:12px 24px;border-radius:6px;font-family:'Syne',sans-serif;font-weight:800;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;width:100%">Comenzar ahora</button>
+        </div>
+      </div>
+      <div>
+        <div class="side-label" style="color:#aaa">◻ Tema Claro</div>
+        <div class="side-light">
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:#1A1520">Ne<span style="background:linear-gradient(135deg,#C9A84C,#8B6914);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">x</span>Core</div>
+          <div class="mini-card-light">
+            <div class="mc-label" style="color:var(--fog)">Plan Enterprise</div>
+            <div class="mc-title" style="color:var(--plum-deep)">Automatización IA</div>
+            <div class="mc-sub" style="color:var(--slate)">Conecta tu equipo con modelos de lenguaje avanzados.</div>
+            <div class="mc-badge badge-light-gold">Premium</div>
+            <div class="mc-badge badge-light-plum" style="margin-left:6px">IA Avanzada</div>
+          </div>
+          <button style="background:linear-gradient(135deg,#C9A84C,#8B6914);color:#FAF8F5;border:none;padding:12px 24px;border-radius:6px;font-family:'Syne',sans-serif;font-weight:800;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;width:100%;box-shadow:0 4px 16px rgba(139,105,20,0.25)">Comenzar ahora</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 PROP -->
+  <section class="section">
+    <div class="section-label">08 — Regla de Proporciones · Tema Claro</div>
+    <div class="prop-card">
+      <div>
+        <div class="prop-title">60 · 30 · 10</div>
+        <div class="prop-desc">La misma regla, aplicada al mundo claro. Los cálidos dominan, el dorado oscuro lidera la acción, el morado oscuro da carácter y peso visual. El secreto está en los micromatices cálidos — ningún color neutro es frío.</div>
+      </div>
+      <div class="prop-bars">
+        <div class="prop-bar" style="background:var(--linen);border:1px solid var(--pearl)">
+          <span class="pb-label" style="color:var(--slate)">Cream + Linen + Ivory</span>
+          <span class="pb-pct" style="color:var(--charcoal)">60%</span>
+        </div>
+        <div class="prop-bar" style="background:rgba(139,105,20,0.08);border:1px solid rgba(139,105,20,0.2)">
+          <span class="pb-label" style="color:var(--gold-deep)">Rich Gold</span>
+          <span class="pb-pct" style="color:var(--gold-deep)">30%</span>
+        </div>
+        <div class="prop-bar" style="background:rgba(45,15,69,0.06);border:1px solid rgba(74,28,107,0.15)">
+          <span class="pb-label" style="color:var(--amethyst)">Deep Plum</span>
+          <span class="pb-pct" style="color:var(--amethyst)">10%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center;padding:40px 0 0;border-top:1px solid var(--pearl)">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--slate)">NexCore · Brand Identity v1.0 · Tema Claro</div>
+    <div style="font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--pearl);margin-top:8px">Confidencial · Uso Interno</div>
+  </div>
+
+</div>
+</body>
+</html>
