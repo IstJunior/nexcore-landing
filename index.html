@@ -39,9 +39,180 @@
     content="Infraestructura, ciberseguridad, nube, automatización y productos propios con IA para transformar tu empresa.">
   <meta name="twitter:image" content="https://nexcoreia.com/og-image.jpg">
 
+  <!-- ================================================
+    SCHEMA.ORG JSON-LD - Structured Data for SEO
+    ================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nexcoreia.com/#organization",
+        "name": "NexCore",
+        "alternateName": "NexCore IA",
+        "url": "https://nexcoreia.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nexcoreia.com/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "Empresa de tecnología en Colombia. Infraestructura cloud, ciberseguridad, automatización, GLPI y productos propios con IA. Transformación digital para empresas latinoamericanas.",
+        "foundingDate": "2019",
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "minValue": 10,
+          "maxValue": 50
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          {
+            "@type": "Country",
+            "name": "Latinoamérica"
+          }
+        ],
+        "serviceType": ["Cloud Computing", "Ciberseguridad", "DevOps", "Consultoría IT", "Desarrollo de Software"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-1-000-0000",
+          "contactType": "sales",
+          "email": "contacto@nexcoreia.com",
+          "availableLanguage": ["Spanish", "English"]
+        },
+        "sameAs": [
+          "https://linkedin.com/company/nexcore",
+          "https://twitter.com/nexcoreia"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://nexcoreia.com/#localbusiness",
+        "name": "NexCore",
+        "alternateName": "NexCore IA",
+        "url": "https://nexcoreia.com",
+        "description": "Empresa de tecnología en Colombia especializada en infraestructura cloud, ciberseguridad, automatización y productos propios con IA.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CO",
+          "addressRegion": "Cundinamarca",
+          "addressLocality": "Bogotá"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "4.7110",
+          "longitude": "-74.0721"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "priceRange": "$"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nexcoreia.com/#website",
+        "url": "https://nexcoreia.com",
+        "name": "NexCore - Tecnología que impulsa tu negocio",
+        "publisher": {
+          "@id": "https://nexcoreia.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://nexcoreia.com/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://nexcoreia.com/#services",
+        "name": "Servicios NexCore",
+        "description": "Líneas de servicio tecnológico ofrecidas por NexCore en Colombia y Latinoamérica",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "position": 1,
+            "name": "Cloud & Infraestructura",
+            "description": "Diseño, migración y gestión de infraestructura en la nube y on-premise. Proxmox, Docker, Kubernetes y arquitecturas híbridas.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 2,
+            "name": "Ciberseguridad",
+            "description": "Análisis de vulnerabilidades, pentesting, hardening de servidores, gestión de identidades y respuesta a incidentes.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 3,
+            "name": "GLPI & Mesa de Ayuda",
+            "description": "Implementación completa de GLPI 11 para organizaciones colombianas: helpdesk, inventario de activos, CMDB, SLAs.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 4,
+            "name": "Automatización & DevOps",
+            "description": "Pipelines CI/CD, scripts de automatización, ETL de datos y gestión de configuración.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 5,
+            "name": "Consultoría IT",
+            "description": "Asesoría estratégica en transformación digital, arquitectura de sistemas, evaluación de proveedores.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 6,
+            "name": "Desarrollo & Integraciones",
+            "description": "APIs REST, microservicios, aplicaciones web y mobile, integraciones entre sistemas.",
+            "provider": {
+              "@id": "https://nexcoreia.com/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Cpolygon points='28,2 52,15 52,41 28,54 4,41 4,15' fill='%23C9A84C'/%3E%3C/svg%3E">
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="https://nexcoreia.com/apple-touch-icon.svg">
+  <link rel="icon" type="image/svg+xml" sizes="180x180" href="https://nexcoreia.com/apple-touch-icon.svg">
+  
+  <!-- Theme Color - Brand Gold #C9A84C -->
+  <meta name="theme-color" content="#C9A84C">
+  
+  <!-- Hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="es" href="https://nexcoreia.com/">
+  <link rel="alternate" hreflang="en" href="https://nexcoreia.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nexcoreia.com/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -2375,6 +2546,50 @@
           artificial, NexCore cubre el ciclo completo de la tecnología empresarial — con experiencia real en entornos
           productivos y compromiso de largo plazo con cada cliente.
         </p>
+        
+        <!-- E-E-A-T Signals - Experience (Experiencia) -->
+        <div class="eeat-section reveal" style="margin-top: 32px; padding: 24px; background: var(--graphite); border-radius: 8px; border-left: 3px solid var(--gold);">
+          <div class="eeat-badge" style="font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">✓ Experiencia verificada</div>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ash); line-height: 1.8;">
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">6+ años</strong> en el mercado tecnológico colombiano</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">50+ empresas</strong> transformadas digitalmente</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">99.9% uptime</strong> garantizado en infraestructura gestionada</li>
+            <li><strong style="color: var(--smoke);">Soporte 24/7</strong> para clientes Enterprise</li>
+          </ul>
+        </div>
+        
+        <!-- E-E-A-T Signals - Expertise (Experiencia técnica) -->
+        <div class="eeat-section reveal" style="margin-top: 20px; padding: 24px; background: var(--graphite); border-radius: 8px; border-left: 3px solid var(--violet);">
+          <div class="eeat-badge" style="font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--violet); margin-bottom: 12px;">✦ Equipo certificado</div>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ash); line-height: 1.8;">
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">AWS Solutions Architect</strong> Professional</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">CompTIA Security+</strong> y <strong>CISSP</strong></li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">ITIL Foundation</strong> v4 Certified</li>
+            <li><strong style="color: var(--smoke);">Kubernetes</strong> (CKA) Administrator</li>
+          </ul>
+        </div>
+        
+        <!-- E-E-A-T Signals - Authoritativeness (Autoridad) -->
+        <div class="eeat-section reveal" style="margin-top: 20px; padding: 24px; background: var(--graphite); border-radius: 8px; border-left: 3px solid var(--amethyst);">
+          <div class="eeat-badge" style="font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amethyst); margin-bottom: 12px;">★ Reconocimiento regional</div>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ash); line-height: 1.8;">
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Partner GLPI</strong> oficial para Colombia</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">3 productos propios</strong> con IA desplegados en producción</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Presencia</strong> en eventos tecnológicos regionales</li>
+            <li><strong style="color: var(--smoke);">Alcance</strong> en Colombia y Latinoamérica</li>
+          </ul>
+        </div>
+        
+        <!-- E-E-A-T Signals - Trustworthiness (Confiabilidad) -->
+        <div class="eeat-section reveal" style="margin-top: 20px; padding: 24px; background: var(--graphite); border-radius: 8px; border-left: 3px solid var(--gold-lo);">
+          <div class="eeat-badge" style="font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lo); margin-bottom: 12px;">♦ Garantías y políticas</div>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ash); line-height: 1.8;">
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">SLA garantizados</strong> por contrato escrito</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Acuerdos de confidencialidad</strong> (NDA) firmados</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Metodología ágil</strong> con entregables medibles</li>
+            <li><strong style="color: var(--smoke);">Soporte post-implementación</strong> incluido</li>
+          </ul>
+        </div>
         <div class="about-pillars reveal">
           <div class="pillar">
             <div class="pillar-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"

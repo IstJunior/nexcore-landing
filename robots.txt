@@ -1,4 +1,26 @@
+# Robots.txt for NexCore - https://nexcoreia.com
+# Last updated: 2026-03-07
+
 User-agent: *
 Allow: /
 
+# Crawl-delay is not recommended by Google but can be useful for some crawlers
+# Uncomment if needed: Crawl-delay: 1
+
+# Disallow paths that don't need indexing
+Disallow: /api/
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /private/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/fonts/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Sitemap location
 Sitemap: https://nexcoreia.com/sitemap.xml
+
+# Host directive for consistent crawl behavior
+Host: https://nexcoreia.com
