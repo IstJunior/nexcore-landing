@@ -2574,7 +2574,7 @@
           <div class="eeat-badge" style="font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amethyst); margin-bottom: 12px;">★ Reconocimiento regional</div>
           <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ash); line-height: 1.8;">
             <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Partner GLPI</strong> oficial para Colombia</li>
-            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">4 productos propios</strong> con IA desplegados en producción</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">3 productos propios</strong> con IA desplegados en producción</li>
             <li style="margin-bottom: 8px;"><strong style="color: var(--smoke);">Presencia</strong> en eventos tecnológicos regionales</li>
             <li><strong style="color: var(--smoke);">Alcance</strong> en Colombia y Latinoamérica</li>
           </ul>
@@ -2771,32 +2771,8 @@
         <h2 class="sh2">Productos<br><em>NexCore</em></h2>
       </div>
 
-      <!-- ParkFlux -->
-      <div class="prod-item reveal">
-        <div class="prod-vis">
-          <div class="prod-vis-glow"></div>
-          <div class="prod-vis-label">PARK<br>FLUX</div>
-          <div class="prod-badge-pill">Producto Propio</div>
-        </div>
-        <div>
-          <div class="prod-tag">Sistema Inteligente de Parqueaderos</div>
-          <div class="prod-name">Park<em>Flux</em></div>
-          <p class="prod-desc">Plataforma multi-tenant con reconocimiento de placas en tiempo real, clasificación de
-            vehículos por visión computacional y módulo de reconocimiento facial — con el flujo exclusivo "quítate el
-            casco" para motociclistas. Latencia total &lt;800ms.</p>
-          <ul class="prod-feats">
-            <li>LPR — Placas colombianas con &gt;95% de precisión</li>
-            <li>Clasificación: moto, carro, bici, patineta eléctrica</li>
-            <li>Verificación facial de identidad entrada-salida</li>
-            <li>SuperAdmin central para múltiples sedes</li>
-            <li>Modo offline con sincronización automática</li>
-          </ul>
-          <a href="#contact" class="btn-primary">Solicitar Demo</a>
-        </div>
-      </div>
-
       <!-- NexBot -->
-      <div class="prod-item flip reveal">
+      <div class="prod-item reveal">
         <div class="prod-vis">
           <div class="prod-vis-glow"></div>
           <div class="prod-vis-label">NEX<br>BOT</div>
@@ -2819,10 +2795,59 @@
       </div>
 
       <!-- GLPI Managed -->
-      <div class="prod-item reveal">
+      <div class="prod-item flip reveal">
         <div class="prod-vis">
           <div class="prod-vis-glow"></div>
-          <div class="prod-vis-label">GLPI<br>MGD</div>
+
+          <!-- GLPI illustration: helpdesk ticket queue + IT gear watermark -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Grid lines -->
+            <g stroke="#C9A84C" stroke-width="0.5" opacity="0.07">
+              <line x1="0" y1="55"  x2="320" y2="55"/>
+              <line x1="0" y1="110" x2="320" y2="110"/>
+              <line x1="0" y1="165" x2="320" y2="165"/>
+            </g>
+            <!-- Gear watermark (right half) — dashed outer ring = teeth, inner rings = body -->
+            <circle cx="242" cy="110" r="72" stroke="#C9A84C" stroke-width="16" fill="none" opacity="0.055" stroke-dasharray="11 19"/>
+            <circle cx="242" cy="110" r="52" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.08"/>
+            <circle cx="242" cy="110" r="28" fill="#C9A84C" opacity="0.05"/>
+            <circle cx="242" cy="110" r="12" stroke="#C9A84C" stroke-width="2" fill="none" opacity="0.13"/>
+            <!-- Ticket rows — status dot + bar -->
+            <!-- open -->
+            <circle cx="30" cy="30"  r="4.5" fill="#C9A84C" opacity="0.65"/>
+            <rect   x="44"  y="24"  width="158" height="12" rx="6" fill="#C9A84C" opacity="0.13"/>
+            <!-- in progress -->
+            <circle cx="30" cy="52"  r="4.5" fill="#C9A84C" opacity="0.35"/>
+            <rect   x="44"  y="46"  width="112" height="12" rx="6" fill="#C9A84C" opacity="0.09"/>
+            <!-- open -->
+            <circle cx="30" cy="74"  r="4.5" fill="#C9A84C" opacity="0.65"/>
+            <rect   x="44"  y="68"  width="178" height="12" rx="6" fill="#C9A84C" opacity="0.13"/>
+            <!-- resolved -->
+            <circle cx="30" cy="96"  r="4.5" fill="#C9A84C" opacity="0.9"/>
+            <rect   x="44"  y="90"  width="144" height="12" rx="6" fill="#C9A84C" opacity="0.2"/>
+            <!-- in progress -->
+            <circle cx="30" cy="118" r="4.5" fill="#C9A84C" opacity="0.35"/>
+            <rect   x="44"  y="112" width="92"  height="12" rx="6" fill="#C9A84C" opacity="0.09"/>
+            <!-- open -->
+            <circle cx="30" cy="140" r="4.5" fill="#C9A84C" opacity="0.65"/>
+            <rect   x="44"  y="134" width="168" height="12" rx="6" fill="#C9A84C" opacity="0.13"/>
+            <!-- resolved -->
+            <circle cx="30" cy="162" r="4.5" fill="#C9A84C" opacity="0.9"/>
+            <rect   x="44"  y="156" width="130" height="12" rx="6" fill="#C9A84C" opacity="0.2"/>
+            <!-- in progress -->
+            <circle cx="30" cy="184" r="4.5" fill="#C9A84C" opacity="0.35"/>
+            <rect   x="44"  y="178" width="162" height="12" rx="6" fill="#C9A84C" opacity="0.09"/>
+            <!-- Server stack accent (top-right corner) -->
+            <g fill="#C9A84C" opacity="0.28">
+              <rect x="278" y="16" width="32" height="8" rx="2"/>
+              <rect x="278" y="27" width="32" height="8" rx="2"/>
+              <rect x="278" y="38" width="32" height="8" rx="2"/>
+              <circle cx="305" cy="20" r="1.8" opacity="0.9"/>
+              <circle cx="305" cy="31" r="1.8" opacity="0.5"/>
+              <circle cx="305" cy="42" r="1.8" opacity="0.9"/>
+            </g>
+          </svg>
+
           <div class="prod-badge-pill">Servicio Gestionado</div>
         </div>
         <div>
@@ -2843,7 +2868,7 @@
       </div>
 
       <!-- NexFi -->
-      <div class="prod-item flip reveal">
+      <div class="prod-item reveal">
         <div class="prod-vis">
           <div class="prod-vis-glow"></div>
 
@@ -2929,7 +2954,7 @@
   <div id="stats">
     <div class="stats-row">
       <div class="stat reveal">
-        <div class="stat-n">4<span class="stat-u">+</span></div>
+        <div class="stat-n">3<span class="stat-u">+</span></div>
         <div class="stat-l">Productos propios</div>
       </div>
       <div class="stat reveal d1">
