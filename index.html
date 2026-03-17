@@ -2846,7 +2846,64 @@
       <div class="prod-item flip reveal">
         <div class="prod-vis">
           <div class="prod-vis-glow"></div>
-          <div class="prod-vis-label">NEX<br>FI</div>
+
+          <!-- NexFi illustration: finance chart + brand N logo -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Horizontal grid lines -->
+            <g stroke="#C9A84C" stroke-width="0.5" opacity="0.07">
+              <line x1="0" y1="48"  x2="320" y2="48"/>
+              <line x1="0" y1="96"  x2="320" y2="96"/>
+              <line x1="0" y1="144" x2="320" y2="144"/>
+              <line x1="0" y1="192" x2="320" y2="192"/>
+            </g>
+            <!-- Monthly bars (10 months) -->
+            <g fill="#C9A84C" opacity="0.11">
+              <rect x="16"  y="150" width="20" height="60"  rx="2"/>
+              <rect x="46"  y="122" width="20" height="88"  rx="2"/>
+              <rect x="76"  y="100" width="20" height="110" rx="2"/>
+              <rect x="106" y="132" width="20" height="78"  rx="2"/>
+              <rect x="136" y="84"  width="20" height="126" rx="2"/>
+              <rect x="166" y="64"  width="20" height="146" rx="2"/>
+              <rect x="196" y="94"  width="20" height="116" rx="2"/>
+              <rect x="226" y="54"  width="20" height="156" rx="2"/>
+              <rect x="256" y="74"  width="20" height="136" rx="2"/>
+              <rect x="286" y="38"  width="20" height="172" rx="2"/>
+            </g>
+            <!-- Trend line (upward) -->
+            <polyline
+              points="26,172 56,146 86,122 116,138 146,102 176,80 206,96 236,62 266,76 296,44"
+              stroke="#C9A84C" stroke-width="1.8" fill="none" opacity="0.38"
+              stroke-linecap="round" stroke-linejoin="round"
+            />
+            <!-- Data dots -->
+            <g fill="#C9A84C">
+              <circle cx="26"  cy="172" r="2.5" opacity="0.4"/>
+              <circle cx="86"  cy="122" r="2.5" opacity="0.4"/>
+              <circle cx="146" cy="102" r="2.5" opacity="0.4"/>
+              <circle cx="206" cy="96"  r="2.5" opacity="0.4"/>
+              <circle cx="266" cy="76"  r="2.5" opacity="0.4"/>
+              <!-- Highlight last dot (current peak) -->
+              <circle cx="296" cy="44"  r="5"   opacity="0.65"/>
+              <circle cx="296" cy="44"  r="8"   opacity="0.12"/>
+            </g>
+            <!--
+              NexFi "N" logo watermark — derived from favicon path:
+              Original: M4 18 L4 6 L14 18 L14 3 in viewBox 0 0 22 22
+              Scaled ×7.5, centered at (160, 110)
+            -->
+            <path
+              d="M123,166 L123,76 L198,166 L198,54"
+              stroke="#C9A84C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"
+              opacity="0.15"
+            />
+            <!-- Small NexFi logo accent — top-right corner (scale ×2.5, offset 272,12) -->
+            <path
+              d="M282,57 L282,27 L307,57 L307,19"
+              stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+              opacity="0.45"
+            />
+          </svg>
+
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
