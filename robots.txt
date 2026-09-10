@@ -1,26 +1,67 @@
-# Robots.txt for NexCore - https://nexcoreia.com
-# Last updated: 2026-03-07
+# Robots.txt for NexCore — https://nexcoreia.com
+# Last updated: 2026-09-10
 
+# ─── Buscadores tradicionales ───────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-# Crawl-delay is not recommended by Google but can be useful for some crawlers
-# Uncomment if needed: Crawl-delay: 1
+# El sitio es una sola página estática. CSS, JS y fuentes deben ser rastreables:
+# si se bloquean, Google no puede renderizar la página y penaliza la evaluación
+# de usabilidad móvil y Core Web Vitals.
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.svg$
+Allow: /*.woff2$
 
-# Disallow paths that don't need indexing
 Disallow: /api/
 Disallow: /admin/
 Disallow: /internal/
 Disallow: /private/
-Disallow: /assets/css/
-Disallow: /assets/js/
-Disallow: /assets/fonts/
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
 
-# Sitemap location
+# ─── Rastreadores de IA generativa ──────────────────────────────────────────
+# Permitidos deliberadamente: las fichas de producto y el FAQ de esta página
+# son la fuente que queremos que citen sobre Notebook, MotorDesk y SmartPOS.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ─── Descubrimiento ─────────────────────────────────────────────────────────
 Sitemap: https://nexcoreia.com/sitemap.xml
-
-# Host directive for consistent crawl behavior
-Host: https://nexcoreia.com

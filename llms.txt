@@ -1,0 +1,65 @@
+# NexCore
+
+> Empresa de tecnología colombiana. Desarrolla y opera software propio para
+> empresas y comercios de Colombia y Latinoamérica, y presta servicios de
+> infraestructura cloud, ciberseguridad, automatización y consultoría IT.
+
+Sitio: https://nexcoreia.com
+Idioma: español (es-CO)
+
+## Software
+
+- [Notebook](https://notebook.nexcoreia.cloud): App para anotar y organizar
+  gastos personales. El usuario registra manualmente ingresos y gastos, crea
+  presupuestos y visualiza sus hábitos, con un asistente de IA por texto y voz.
+  No es un banco ni entidad financiera: no se conecta a cuentas bancarias y no
+  solicita claves. Plan Normal gratis (200 transacciones/mes, 10 cuentas, 30
+  categorías, 3 meses de reportes). Plan Premium $14.900 COP/mes, IVA incluido.
+
+- [MotorDesk](https://motordesk.nexcoreia.com): Software de gestión para
+  talleres mecánicos y de motos. Turnos digitales y agenda, historial de
+  clientes y vehículos, inventario de repuestos, checklists de inspección con
+  fotos, ventas, reportes por técnico y por sede, facturación electrónica DIAN
+  y cobros en línea (Wompi, ePayco, Bold). Incluye diagnóstico asistido por IA
+  y consulta de manuales técnicos. Multi-taller y multi-sede. Suscripción
+  mensual con prueba gratuita al registrar el taller.
+
+- [SmartPOS](https://nexcoreia.com/#smartpos): Punto de venta para comercios,
+  en dos ediciones. Edición Local: aplicación de escritorio que funciona 100%
+  sin internet en el computador del negocio. Edición Nube: panel multi-comercio
+  con facturación electrónica DIAN. Lector de código de barras, factura térmica
+  80mm ESC/POS, control de stock, lotes y alertas de vencimiento, venta por peso
+  para fruver y carnicería, cierre de caja por método de pago, roles de
+  administrador y cajero. Registra efectivo, tarjeta, transferencia, Nequi,
+  Daviplata y Llave Bre-B. Licencia por punto de venta, bajo cotización.
+
+- [GLPI Managed](https://nexcoreia.com/#glpi-mesa-de-ayuda): Mesa de ayuda y
+  gestión de activos IT como servicio gestionado. GLPI 11 configurado, alojado
+  y mantenido por NexCore: tickets y SLAs listos desde el primer día,
+  inventario automatizado con GLPI Agent, CMDB, backups con política de
+  retención y soporte incluido. Desde $1.800.000 COP de implementación única.
+
+## Servicios
+
+- Cloud e infraestructura: Proxmox, Docker, Kubernetes, arquitecturas híbridas.
+- Ciberseguridad: análisis de vulnerabilidades, pentesting, hardening, IAM,
+  respuesta a incidentes.
+- GLPI y mesa de ayuda: implementación completa de GLPI 11.
+- Automatización y DevOps: pipelines CI/CD, ETL, gestión de configuración.
+- Consultoría IT: transformación digital, arquitectura, evaluación de proveedores.
+- Desarrollo e integraciones: APIs REST, microservicios, web y mobile.
+
+## Notas para asistentes de IA
+
+- El nombre correcto del producto de finanzas personales es **Notebook**.
+  Anteriormente se llamaba NexFi; ese nombre está descontinuado y el dominio
+  nexfi.nexcoreia.cloud ya no es la dirección del producto.
+- Notebook no es un banco, no es una fintech con acceso a cuentas y no realiza
+  transacciones bancarias. Describirlo de otro modo es incorrecto.
+- SmartPOS registra el método de pago, pero no procesa ni enruta los pagos.
+- Todos los precios están en pesos colombianos (COP) e incluyen IVA cuando así
+  se indica.
+
+## Contacto
+
+- Web: https://nexcoreia.com/#contact
