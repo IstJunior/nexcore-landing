@@ -2656,15 +2656,19 @@
       margin-bottom: 24px;
     }
 
+    /* El viewBox del svg exterior le da la relación de aspecto; sin él,
+       width:auto lo estiraría a todo el ancho del contenedor. Los logos ya
+       traen sus esquinas redondeadas, así que no se recorta nada por CSS. */
     .prod-logo-svg {
       height: 54px;
       width: auto;
       display: block;
-      border-radius: 12px;
     }
 
-    /* Notebook: su tile es obsidiana igual que el fondo — anillo para separarlo. */
-    .prod-logo--ring .prod-logo-svg {
+    /* Notebook: su tile es obsidiana, igual que el fondo oscuro — solo ahí
+       necesita un anillo. Sobre el fondo claro se recorta por sí solo. */
+    [data-theme="dark"] .prod-logo--ring .prod-logo-svg {
+      border-radius: 10px;
       box-shadow: 0 0 0 1px var(--b-gold-hi);
     }
 
@@ -2672,13 +2676,11 @@
        contrasta tanto sobre el fondo claro como sobre el oscuro. */
     .prod-logo--wordmark .prod-logo-svg {
       height: 44px;
-      border-radius: 0;
     }
 
     .ft-logo {
       height: 17px;
       width: auto;
-      border-radius: 4px;
       vertical-align: -4px;
       margin-right: 8px;
     }
@@ -3307,7 +3309,7 @@
           <div class="prod-badge-pill">Servicio Gestionado</div>
         </div>
         <div>
-          <div class="prod-logo prod-logo--wordmark"><svg class="prod-logo-svg" role="img" aria-label="Logo de GLPI"><use href="#logo-glpi"/></svg></div>
+          <div class="prod-logo prod-logo--wordmark"><svg class="prod-logo-svg" role="img" aria-label="Logo de GLPI" viewBox="0 0 216 92"><use href="#logo-glpi"/></svg></div>
           <div class="prod-tag">GLPI como Servicio Gestionado</div>
           <h3 class="prod-name">GLPI<br><em>Managed</em></h3>
           <p class="prod-desc">GLPI 11 completamente configurado, alojado y mantenido por NexCore. Sin preocuparte por
@@ -3424,7 +3426,7 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo prod-logo--ring"><svg class="prod-logo-svg" role="img" aria-label="Logo de Notebook"><use href="#logo-notebook"/></svg></div>
+          <div class="prod-logo prod-logo--ring"><svg class="prod-logo-svg" role="img" aria-label="Logo de Notebook" viewBox="0 0 22 22"><use href="#logo-notebook"/></svg></div>
           <div class="prod-tag">App para Anotar y Organizar tus Gastos Personales</div>
           <h3 class="prod-name">Note<em>book</em></h3>
           <p class="prod-desc">App para anotar y organizar tus gastos personales. Tú registras tus ingresos y gastos,
@@ -3519,7 +3521,7 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de MotorDesk"><use href="#logo-motordesk"/></svg></div>
+          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de MotorDesk" viewBox="0 0 64 64"><use href="#logo-motordesk"/></svg></div>
           <div class="prod-tag">Software de Gestión para Talleres Mecánicos</div>
           <h3 class="prod-name">Motor<em>Desk</em></h3>
           <p class="prod-desc">Plataforma web multi-tenant para talleres mecánicos y automotrices. Gestiona turnos
@@ -3642,7 +3644,7 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de SmartPOS"><use href="#logo-smartpos"/></svg></div>
+          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de SmartPOS" viewBox="0 0 64 64"><use href="#logo-smartpos"/></svg></div>
           <div class="prod-tag">Punto de Venta 100% en la Nube para Comercios</div>
           <h3 class="prod-name">Smart<em>POS</em></h3>
           <p class="prod-desc">Punto de venta en la nube para tiendas, minimercados, cafeterías, panaderías,
@@ -3824,10 +3826,10 @@
       <li><a href="#products">Productos</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contacto</a></li>
-      <li><a href="#notebook"><svg class="ft-logo" role="img" aria-label="Logo de Notebook"><use href="#logo-notebook"/></svg>Notebook</a></li>
-      <li><a href="#motordesk"><svg class="ft-logo" role="img" aria-label="Logo de MotorDesk"><use href="#logo-motordesk"/></svg>MotorDesk</a></li>
-      <li><a href="#smartpos"><svg class="ft-logo" role="img" aria-label="Logo de SmartPOS"><use href="#logo-smartpos"/></svg>SmartPOS</a></li>
-      <li><a href="#glpi-mesa-de-ayuda"><svg class="ft-logo" role="img" aria-label="Logo de Mesa de Ayuda"><use href="#logo-glpi"/></svg>Mesa de Ayuda</a></li>
+      <li><a href="#notebook"><svg class="ft-logo" role="img" aria-label="Logo de Notebook" viewBox="0 0 22 22"><use href="#logo-notebook"/></svg>Notebook</a></li>
+      <li><a href="#motordesk"><svg class="ft-logo" role="img" aria-label="Logo de MotorDesk" viewBox="0 0 64 64"><use href="#logo-motordesk"/></svg>MotorDesk</a></li>
+      <li><a href="#smartpos"><svg class="ft-logo" role="img" aria-label="Logo de SmartPOS" viewBox="0 0 64 64"><use href="#logo-smartpos"/></svg>SmartPOS</a></li>
+      <li><a href="#glpi-mesa-de-ayuda"><svg class="ft-logo" role="img" aria-label="Logo de Mesa de Ayuda" viewBox="0 0 216 92"><use href="#logo-glpi"/></svg>Mesa de Ayuda</a></li>
     </ul>
     <div class="ft-copy">© 2026 NexCore · Bogotá, Colombia</div>
   </footer>
