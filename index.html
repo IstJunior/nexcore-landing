@@ -325,20 +325,19 @@
           "name": "SmartPOS",
           "applicationCategory": "BusinessApplication",
           "applicationSubCategory": "Software de punto de venta (POS) para comercios",
-          "operatingSystem": "Windows, Web",
-          "softwareVersion": "0.14.1",
+          "operatingSystem": "Web",
           "inLanguage": "es-CO",
-          "description": "Punto de venta para comercios en dos ediciones: escritorio 100% offline sobre el computador del negocio, y edición nube multi-comercio con facturación electrónica DIAN. Lector de código de barras, factura térmica 80mm, control de stock y cierre de caja.",
+          "description": "Punto de venta 100% en la nube para comercios: se usa desde el navegador sin instalar nada. Cobro con lector de código de barras, inventario con lotes FEFO y vencimientos, caja y arqueo, venta por peso, impresora térmica y cajón monedero. Dominio, hosting, backups y usuarios ilimitados incluidos en la cuota.",
           "featureList": [
-            "Venta con lector de código de barras y botones de acceso rápido",
-            "Factura térmica 80mm ESC/POS",
-            "Cierre y cuadre de caja por método de pago",
-            "Control de stock, lotes y alertas de vencimiento",
-            "Venta por peso o medida para fruver y carnicería",
-            "Pagos en efectivo, tarjeta, transferencia, Nequi, Daviplata y Bre-B",
-            "Roles de administrador y cajero",
-            "Funcionamiento 100% sin conexión a internet",
-            "Edición nube multi-comercio con facturación electrónica DIAN"
+            "Cobro rápido con lector de código de barras y accesos directos",
+            "Inventario con lotes FEFO, vencimientos y alertas de mínimos",
+            "Caja: apertura, movimientos, cierres de turno y arqueo",
+            "Venta por unidad o por peso y medida",
+            "Compatible con impresora térmica, cajón monedero y lector de código de barras",
+            "Proveedores, compras, promociones y combos",
+            "Reportes y estadísticas del negocio",
+            "Multi-comercio en la nube, aislado por comercio",
+            "Usuarios ilimitados sin cobro por usuario"
           ],
           "publisher": {
             "@id": "https://nexcoreia.com/#organization"
@@ -350,12 +349,33 @@
             "@type": "Audience",
             "audienceType": "Cafeterías, panaderías, tiendas de barrio, fruver, carnicerías y minimercados"
           },
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "COP",
-            "description": "Licencia por punto de venta. Solicitar demostración y cotización.",
-            "availability": "https://schema.org/InStock"
-          }
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Plan anual",
+              "price": "304980",
+              "priceCurrency": "COP",
+              "availability": "https://schema.org/InStock",
+              "description": "$25.415 al mes facturado anualmente."
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan trimestral",
+              "price": "80730",
+              "priceCurrency": "COP",
+              "availability": "https://schema.org/InStock",
+              "description": "$26.910 al mes facturado cada 3 meses."
+            },
+            {
+              "@type": "Offer",
+              "name": "Plan mensual",
+              "price": "29900",
+              "priceCurrency": "COP",
+              "availability": "https://schema.org/InStock",
+              "description": "Cuota mensual."
+            }
+          ],
+          "url": "https://smartpos.nexcoreia.cloud"
         },
         {
           "@type": "Service",
@@ -399,7 +419,7 @@
           "name": "¿Qué software desarrolla NexCore?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "NexCore desarrolla y opera cuatro soluciones: Notebook, una app para anotar y organizar gastos personales; MotorDesk, software de gestión para talleres mecánicos; SmartPOS, un punto de venta para comercios en edición local y en la nube; y GLPI Managed, mesa de ayuda y gestión de activos IT como servicio gestionado."
+            "text": "NexCore desarrolla y opera cuatro soluciones: Notebook, una app para anotar y organizar gastos personales; MotorDesk, software de gestión para talleres mecánicos; SmartPOS, un punto de venta en la nube para comercios; y GLPI Managed, mesa de ayuda y gestión de activos IT como servicio gestionado."
           }
         },
         {
@@ -428,10 +448,10 @@
         },
         {
           "@type": "Question",
-          "name": "¿SmartPOS funciona sin internet?",
+          "name": "¿Cuánto cuesta SmartPOS y qué incluye?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. La edición Local de SmartPOS funciona al 100% sin conexión: se instala en el computador del negocio y guarda los datos localmente, así que la caja sigue vendiendo aunque se caiga el internet. La edición Nube añade panel multi-comercio y facturación electrónica DIAN para negocios que la necesiten."
+            "text": "SmartPOS cuesta desde $25.415 COP al mes en el plan anual; también hay plan mensual ($29.900) y trimestral ($26.910 al mes). Todos los planes incluyen todos los módulos, el dominio, el hosting, los backups y usuarios ilimitados, sin cobro por cajero ni por administrador."
           }
         },
         {
@@ -439,15 +459,15 @@
           "name": "¿Qué tipo de negocios usan SmartPOS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SmartPOS es un punto de venta genérico para cafeterías, panaderías, tiendas de barrio, minimercados, fruver y carnicerías. Soporta venta por unidad y venta por peso o medida, lector de código de barras, factura térmica de 80mm y cierre de caja por método de pago."
+            "text": "SmartPOS sirve para cualquier comercio que venda en mostrador: tiendas de barrio, minimercados, supermercados, cafeterías, panaderías, restaurantes, carnicerías, fruvers, licoreras, droguerías, ferreterías y papelerías, entre otros. Al crear la cuenta eliges el tipo de negocio y el sistema se configura solo. Es 100% web: se usa desde cualquier navegador, sin instalar nada."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué métodos de pago registra SmartPOS?",
+          "name": "¿SmartPOS emite factura electrónica DIAN?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SmartPOS registra efectivo, tarjeta, transferencia, Nequi, Daviplata y Llave Bre-B, y calcula el cambio en las ventas en efectivo. El sistema registra el método de pago y descuenta el stock; el cobro se realiza por el canal que ya use el comercio."
+            "text": "Por ahora SmartPOS emite un comprobante interno de venta en recibo térmico. La factura electrónica validada por la DIAN es un módulo en desarrollo que se habilitará por comercio; para activarla el negocio debe tener listos sus trámites ante la DIAN. Los cobros se registran en efectivo, tarjeta, transferencia, Nequi, Daviplata y Llave Bre-B."
           }
         },
         {
@@ -2628,6 +2648,60 @@
       .faq-item .faq-a { font-size: .9rem; padding-bottom: 22px; }
     }
 
+
+    /* ═══════════ LOGOS DE PRODUCTO ═══════════ */
+    .prod-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .prod-logo-svg {
+      height: 54px;
+      width: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* Notebook: su tile es obsidiana igual que el fondo — anillo para separarlo. */
+    .prod-logo--ring .prod-logo-svg {
+      box-shadow: 0 0 0 1px var(--b-gold-hi);
+    }
+
+    /* GLPI: marca horizontal de un tercero. Placa oscura fija para que sus
+       detalles en blanco lean igual en tema claro y oscuro. */
+    .prod-logo--plate {
+      background: #12121C;
+      border-radius: 12px;
+      padding: 13px 18px;
+      box-shadow: 0 0 0 1px var(--b-gold);
+    }
+
+    .prod-logo--plate .prod-logo-svg {
+      height: 32px;
+      border-radius: 0;
+    }
+
+    .ft-logo {
+      height: 17px;
+      width: auto;
+      border-radius: 4px;
+      vertical-align: -4px;
+      margin-right: 8px;
+    }
+
+    .ft-links a:has(.ft-logo) {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .prod-logo { margin-bottom: 18px; }
+      .prod-logo-svg { height: 46px; }
+      .prod-logo--plate { padding: 11px 15px; }
+      .prod-logo--plate .prod-logo-svg { height: 27px; }
+    }
+
   </style>
   <script>document.documentElement.dataset.theme = localStorage.getItem('nc-theme') || 'dark'; document.documentElement.classList.remove('no-js')</script>
 
@@ -2776,6 +2850,16 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDNHQ3WS" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Sprite de logos de producto. Fuentes en logos/ (ver logos/README.md).
+       GLPI es marca de Teclib', usada de forma descriptiva. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo-notebook" viewBox="0 0 22 22"><rect rx="4" fill="#0A0A0F"/> <path d="M4 18 L4 6 L14 18 L14 3" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="logo-motordesk" viewBox="0 0 64 64"><defs> <linearGradient id="mdLogoGrad" x1="0" y1="0" x2="1" y2="1"> <stop offset="0%" stop-color="#FB923C"/> <stop offset="40%" stop-color="#F97316"/> <stop offset="100%" stop-color="#EA580C"/> </linearGradient> </defs> <rect width="64" height="64" rx="14" ry="14" fill="url(#mdLogoGrad)"/> <path d="M14 50 L21 20 L32 38 L43 20 L50 50" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" /></symbol>
+    <symbol id="logo-smartpos" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#d97706"/> <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"> <path d="M16 26h26v10a12 12 0 0 1-12 12h-2a12 12 0 0 1-12-12V26z"/> <path d="M42 29h4a6 6 0 0 1 0 12h-4"/> <path d="M22 12c-2 2-2 4 0 6M31 12c-2 2-2 4 0 6"/> </g></symbol>
+    <symbol id="logo-glpi" viewBox="0 0 216 92"><path fill="#00a5f3" d="M33.63,73.6A52.48,52.48,0,0,1,16,66.42a30.43,30.43,0,0,1-1.14-50.1C23.89,9.7,34.4,7,45.24,5.39A111.91,111.91,0,0,1,69,4.2c2.74.18,3.7,1.26,3.56,4-.14,2.9-1.88,2.59-3.91,2.58-8.2,0-16.28.75-24.08,3.58-13.09,4.76-19.74,13.5-19.68,26C24.9,53.05,31.37,61.21,45,65.78c3.21.25,6.58-.22,9.39,2a54.86,54.86,0,0,0,13.41.89c2.53-.08,3.35.91,3.27,3.32-.06,2.15,0,3.67-3,3.94-9.12.81-18.16.09-27.22-.77C38.24,75.64,35.72,75.63,33.63,73.6Z"/><path fill="#00a5f3" d="M138.84,75.69c-5.28,0-5.21,0-4.44-5.43,2.93-20.72,5.88-41.44,8.65-62.19.41-3.08,1.69-4,4.56-3.92,5.45.13,10.91.29,16.34,0,15.17-.86,21.7,12.36,20.26,23.16C182.38,41,172.12,50,158.25,50h-1.43c-9.13,0-9.1,0-10.14,9.28-.4,3.65-1,7.26-1.48,10.9C144.49,75.67,144.49,75.69,138.84,75.69Z"/><path fill="#00a5f3" d="M105.3,75.69c-4.74,0-9.47-.14-14.2,0-2.95.12-4-.67-3.55-3.85,2.87-19.76,5.58-39.55,8.35-59.33.07-.47.18-.93.24-1.4,1-7.24,1-7.15,8.2-7,2.72.05,3.56,1.07,3.17,3.67C106,18.45,104.46,29.1,103,39.75c-1.13,8-2.15,15.93-3.38,23.88-.31,2,.23,2.45,2.11,2.43,6.51-.08,13,.07,19.53-.07,2.76-.07,3.83.72,3.49,3.65-.68,5.84-.77,6-6.63,6Z"/><path fill="#00a5f3" d="M195,75.69c-5.31,0-5.3-.11-4.54-5.38q4.49-31.22,8.78-62.46c.36-2.65,1.32-3.9,4-3.67.47,0,.94,0,1.42,0,6,0,5.84,0,5,6-2.88,20.1-5.63,40.23-8.5,60.34C200.35,75.7,200.23,75.69,195,75.69Z"/><path fill="#80d2f8" d="M54.41,67.75a37.67,37.67,0,0,1-9.39-2c8-4.51,13.42-11,15.51-20,.55-2.42-1.11-3.69-3.17-4.45-4.16-1.54-8.53-1.69-12.89-1.85a63.55,63.55,0,0,1-6.58-.32A85.25,85.25,0,0,1,58.75,33,29,29,0,0,1,70,33c5.11,1.2,7.72,5.21,6.54,10.3-1.83,7.91-7.76,12.78-13.38,17.82C60.45,63.59,57.34,65.57,54.41,67.75Z"/><path fill="#82d3f8" d="M33.63,73.6l7.23,1.53a153.31,153.31,0,0,1-27.78,12c-.76.29-.87-.07-.72-.71,6-3.27,12.07-6.5,18.05-9.86C31.66,75.82,33.43,75.51,33.63,73.6Z"/><path fill="#a3defa" d="M11,87.86a5.31,5.31,0,0,1-3.25,1.08c.42-1.3,1.58-1.34,2.46-1.78C10.53,87.38,11,87.42,11,87.86Z"/><path fill="#97daf9" d="M11,87.86l-.79-.7,2.11-.79.72.71A2.47,2.47,0,0,1,11,87.86Z"/><path fill="#fefefe" d="M156.2,39.73c-6.65,0-6.71,0-5.91-6.56.66-5.39,1.54-10.76,2.18-16.15.23-1.93,1-2.61,2.94-2.51,2.71.14,5.44,0,8.16,0,5.39,0,8.77,3.09,9.59,8.45,1.14,7.32-3.92,17.73-14.48,16.74C157.86,39.66,157,39.73,156.2,39.73Z"/></symbol>
+  </svg>
+
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Shared gradient def -->
@@ -3142,11 +3226,8 @@
             <rect width="400" height="275" fill="#0A0A0F"/>
             <!-- Top navbar -->
             <rect x="0" y="0" width="400" height="36" fill="#111119"/>
-            <!-- GLPI logo: circle + G letter -->
-            <circle cx="20" cy="18" r="9" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
-            <text x="20" y="23" font-size="13" fill="#C9A84C" text-anchor="middle" font-family="Georgia,serif" font-weight="bold">G</text>
-            <!-- GLPI wordmark -->
-            <text x="36" y="24" font-size="12" fill="#E8C96D" font-family="monospace" font-weight="bold" letter-spacing="3">GLPI</text>
+            <!-- Marca GLPI real (sprite) -->
+            <use href="#logo-glpi" x="10" y="7" width="52" height="22"/>
             <!-- Nav tabs -->
             <text x="108" y="23" font-size="8" fill="#B8B2AB" font-family="monospace">Inicio</text>
             <text x="148" y="23" font-size="8" fill="#E8C96D" font-family="monospace" font-weight="bold">Tickets</text>
@@ -3234,6 +3315,7 @@
           <div class="prod-badge-pill">Servicio Gestionado</div>
         </div>
         <div>
+          <div class="prod-logo prod-logo--plate"><svg class="prod-logo-svg" role="img" aria-label="Logo de GLPI"><use href="#logo-glpi"/></svg></div>
           <div class="prod-tag">GLPI como Servicio Gestionado</div>
           <h3 class="prod-name">GLPI<br><em>Managed</em></h3>
           <p class="prod-desc">GLPI 11 completamente configurado, alojado y mantenido por NexCore. Sin preocuparte por
@@ -3350,6 +3432,7 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
+          <div class="prod-logo prod-logo--ring"><svg class="prod-logo-svg" role="img" aria-label="Logo de Notebook"><use href="#logo-notebook"/></svg></div>
           <div class="prod-tag">App para Anotar y Organizar tus Gastos Personales</div>
           <h3 class="prod-name">Note<em>book</em></h3>
           <p class="prod-desc">App para anotar y organizar tus gastos personales. Tú registras tus ingresos y gastos,
@@ -3383,10 +3466,8 @@
             <rect width="400" height="275" fill="#0A0A0F"/>
             <!-- Top navbar -->
             <rect x="0" y="0" width="400" height="36" fill="#111119"/>
-            <!-- Wrench icon -->
-            <g stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-              <path d="M25 11a4.2 4.2 0 0 1-5.4 5.4l-6.1 6.1a1.6 1.6 0 0 1-2.3-2.3l6.1-6.1A4.2 4.2 0 0 1 22.7 8.7l-2.4 2.4 1.6 1.6 2.4-2.4c.4.5.6 1.1.7 1.7z"/>
-            </g>
+            <!-- Ícono de marca MotorDesk (sprite) -->
+            <use href="#logo-motordesk" x="8" y="7" width="22" height="22"/>
             <!-- Wordmark -->
             <text x="34" y="24" font-size="12" fill="#E8C96D" font-family="monospace" font-weight="bold">Motor</text>
             <text x="78" y="24" font-size="12" fill="#C9A84C" font-family="monospace">Desk</text>
@@ -3446,6 +3527,7 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
+          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de MotorDesk"><use href="#logo-motordesk"/></svg></div>
           <div class="prod-tag">Software de Gestión para Talleres Mecánicos</div>
           <h3 class="prod-name">Motor<em>Desk</em></h3>
           <p class="prod-desc">Plataforma web multi-tenant para talleres mecánicos y automotrices. Gestiona turnos
@@ -3479,13 +3561,8 @@
             <rect width="400" height="275" fill="#0A0A0F"/>
             <!-- Top navbar -->
             <rect x="0" y="0" width="400" height="36" fill="#111119"/>
-            <!-- SmartPOS icon: barcode glyph in a rounded tile -->
-            <rect x="8" y="6" width="24" height="24" rx="4" fill="#0A0A0F" stroke="#C9A84C" stroke-opacity="0.35" stroke-width="0.8"/>
-            <rect x="13"   y="12" width="1.6" height="12" fill="#E8C96D"/>
-            <rect x="16.4" y="12" width="1"   height="12" fill="#E8C96D" fill-opacity="0.7"/>
-            <rect x="19"   y="12" width="2.2" height="12" fill="#E8C96D"/>
-            <rect x="22.6" y="12" width="1"   height="12" fill="#E8C96D" fill-opacity="0.7"/>
-            <rect x="25.2" y="12" width="1.6" height="12" fill="#E8C96D"/>
+            <!-- Ícono de marca SmartPOS (sprite) -->
+            <use href="#logo-smartpos" x="8" y="6" width="24" height="24"/>
             <!-- SmartPOS wordmark -->
             <text x="38" y="24" font-size="12" fill="#E8C96D" font-family="monospace" font-weight="bold">Smart</text>
             <text x="83" y="24" font-size="12" fill="#C9A84C" font-family="monospace">POS</text>
@@ -3573,19 +3650,20 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-tag">Punto de Venta para Comercios — Local y en la Nube</div>
+          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de SmartPOS"><use href="#logo-smartpos"/></svg></div>
+          <div class="prod-tag">Punto de Venta 100% en la Nube para Comercios</div>
           <h3 class="prod-name">Smart<em>POS</em></h3>
-          <p class="prod-desc">Sistema de punto de venta para cualquier local — cafetería, panadería, tienda, fruver o
-            carnicería. Funciona al 100% sin internet en el computador del negocio, y cuando el comercio crece, escala
-            a la nube con panel multi-comercio y facturación electrónica DIAN.</p>
+          <p class="prod-desc">Punto de venta en la nube para tiendas, minimercados, cafeterías, panaderías,
+            restaurantes, fruvers y carnicerías. Se usa desde el navegador, sin instalar nada, y el dominio, el hosting
+            y los backups van incluidos en una sola cuota — sin cobro por usuario.</p>
           <ul class="prod-feats">
-            <li>Venta con lector de código de barras y botones de acceso rápido</li>
-            <li>Factura térmica 80mm ESC/POS y cierre de caja por método de pago</li>
-            <li>Control de stock, lotes y alertas de vencimiento</li>
-            <li>Efectivo, tarjeta, transferencia, Nequi, Daviplata y Bre-B</li>
-            <li>Edición Local 100% offline · Edición Nube con DIAN y multi-comercio</li>
+            <li>Cobro rápido con lector de código de barras y accesos directos</li>
+            <li>Inventario con lotes FEFO, vencimientos y alertas de mínimos</li>
+            <li>Caja: apertura, movimientos, cierres de turno y arqueo</li>
+            <li>Venta por peso o medida · impresora térmica y cajón monedero</li>
+            <li>Usuarios ilimitados · desde $25.415 COP/mes en el plan anual</li>
           </ul>
-          <a href="#contact" class="btn-primary">Solicitar Demo</a>
+          <a href="https://smartpos.nexcoreia.cloud" target="_blank" rel="noopener" class="btn-primary">Ir a SmartPOS</a>
         </div>
       </div>
     </div>
@@ -3622,7 +3700,7 @@
     <div class="faq-wrap">
         <details class="faq-item reveal">
           <summary>¿Qué software desarrolla NexCore?</summary>
-          <div class="faq-a">NexCore desarrolla y opera cuatro soluciones: Notebook, una app para anotar y organizar gastos personales; MotorDesk, software de gestión para talleres mecánicos; SmartPOS, un punto de venta para comercios en edición local y en la nube; y GLPI Managed, mesa de ayuda y gestión de activos IT como servicio gestionado.</div>
+          <div class="faq-a">NexCore desarrolla y opera cuatro soluciones: Notebook, una app para anotar y organizar gastos personales; MotorDesk, software de gestión para talleres mecánicos; SmartPOS, un punto de venta en la nube para comercios; y GLPI Managed, mesa de ayuda y gestión de activos IT como servicio gestionado.</div>
         </details>
         <details class="faq-item reveal">
           <summary>¿Qué es Notebook y en qué se diferencia de una app bancaria?</summary>
@@ -3637,16 +3715,16 @@
           <div class="faq-a">MotorDesk gestiona la operación completa de un taller: turnos digitales y agenda, historial de clientes y vehículos, inventario de repuestos, checklists de inspección con fotos, ventas, reportes por técnico y por sede, facturación electrónica DIAN y cobros en línea. Incluye diagnóstico asistido por inteligencia artificial y consulta de manuales técnicos.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>¿SmartPOS funciona sin internet?</summary>
-          <div class="faq-a">Sí. La edición Local de SmartPOS funciona al 100% sin conexión: se instala en el computador del negocio y guarda los datos localmente, así que la caja sigue vendiendo aunque se caiga el internet. La edición Nube añade panel multi-comercio y facturación electrónica DIAN para negocios que la necesiten.</div>
+          <summary>¿Cuánto cuesta SmartPOS y qué incluye?</summary>
+          <div class="faq-a">SmartPOS cuesta desde $25.415 COP al mes en el plan anual; también hay plan mensual ($29.900) y trimestral ($26.910 al mes). Todos los planes incluyen todos los módulos, el dominio, el hosting, los backups y usuarios ilimitados, sin cobro por cajero ni por administrador.</div>
         </details>
         <details class="faq-item reveal">
           <summary>¿Qué tipo de negocios usan SmartPOS?</summary>
-          <div class="faq-a">SmartPOS es un punto de venta genérico para cafeterías, panaderías, tiendas de barrio, minimercados, fruver y carnicerías. Soporta venta por unidad y venta por peso o medida, lector de código de barras, factura térmica de 80mm y cierre de caja por método de pago.</div>
+          <div class="faq-a">SmartPOS sirve para cualquier comercio que venda en mostrador: tiendas de barrio, minimercados, supermercados, cafeterías, panaderías, restaurantes, carnicerías, fruvers, licoreras, droguerías, ferreterías y papelerías, entre otros. Al crear la cuenta eliges el tipo de negocio y el sistema se configura solo. Es 100% web: se usa desde cualquier navegador, sin instalar nada.</div>
         </details>
         <details class="faq-item reveal">
-          <summary>¿Qué métodos de pago registra SmartPOS?</summary>
-          <div class="faq-a">SmartPOS registra efectivo, tarjeta, transferencia, Nequi, Daviplata y Llave Bre-B, y calcula el cambio en las ventas en efectivo. El sistema registra el método de pago y descuenta el stock; el cobro se realiza por el canal que ya use el comercio.</div>
+          <summary>¿SmartPOS emite factura electrónica DIAN?</summary>
+          <div class="faq-a">Por ahora SmartPOS emite un comprobante interno de venta en recibo térmico. La factura electrónica validada por la DIAN es un módulo en desarrollo que se habilitará por comercio; para activarla el negocio debe tener listos sus trámites ante la DIAN. Los cobros se registran en efectivo, tarjeta, transferencia, Nequi, Daviplata y Llave Bre-B.</div>
         </details>
         <details class="faq-item reveal">
           <summary>¿Qué incluye GLPI Managed de NexCore?</summary>
@@ -3754,10 +3832,10 @@
       <li><a href="#products">Productos</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contacto</a></li>
-      <li><a href="#notebook">Notebook</a></li>
-      <li><a href="#motordesk">MotorDesk</a></li>
-      <li><a href="#smartpos">SmartPOS</a></li>
-      <li><a href="#glpi-mesa-de-ayuda">Mesa de Ayuda</a></li>
+      <li><a href="#notebook"><svg class="ft-logo" role="img" aria-label="Logo de Notebook"><use href="#logo-notebook"/></svg>Notebook</a></li>
+      <li><a href="#motordesk"><svg class="ft-logo" role="img" aria-label="Logo de MotorDesk"><use href="#logo-motordesk"/></svg>MotorDesk</a></li>
+      <li><a href="#smartpos"><svg class="ft-logo" role="img" aria-label="Logo de SmartPOS"><use href="#logo-smartpos"/></svg>SmartPOS</a></li>
+      <li><a href="#glpi-mesa-de-ayuda"><svg class="ft-logo" role="img" aria-label="Logo de Mesa de Ayuda"><use href="#logo-glpi"/></svg>Mesa de Ayuda</a></li>
     </ul>
     <div class="ft-copy">© 2026 NexCore · Bogotá, Colombia</div>
   </footer>

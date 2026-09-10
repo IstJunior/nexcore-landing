@@ -24,14 +24,18 @@ Idioma: español (es-CO)
   y consulta de manuales técnicos. Multi-taller y multi-sede. Suscripción
   mensual con prueba gratuita al registrar el taller.
 
-- [SmartPOS](https://nexcoreia.com/#smartpos): Punto de venta para comercios,
-  en dos ediciones. Edición Local: aplicación de escritorio que funciona 100%
-  sin internet en el computador del negocio. Edición Nube: panel multi-comercio
-  con facturación electrónica DIAN. Lector de código de barras, factura térmica
-  80mm ESC/POS, control de stock, lotes y alertas de vencimiento, venta por peso
-  para fruver y carnicería, cierre de caja por método de pago, roles de
-  administrador y cajero. Registra efectivo, tarjeta, transferencia, Nequi,
-  Daviplata y Llave Bre-B. Licencia por punto de venta, bajo cotización.
+- [SmartPOS](https://smartpos.nexcoreia.cloud): Punto de venta 100% en la nube
+  para comercios. Se usa desde el navegador, sin instalar nada. Cobro rápido con
+  lector de código de barras, inventario con lotes FEFO y control de
+  vencimientos, caja con apertura, movimientos, cierres de turno y arqueo, venta
+  por unidad o por peso, proveedores, promociones y combos, reportes.
+  Compatible con impresora térmica, cajón monedero y lector de código de barras.
+  Multi-comercio, aislado por comercio. El dominio, el hosting, los backups y los
+  usuarios (cajeros y administradores) van incluidos en la cuota, sin cobro por
+  usuario. Precios: mensual $29.900 COP, trimestral $26.910 COP/mes, anual
+  $25.415 COP/mes. Sirve para tiendas de barrio, minimercados, supermercados,
+  cafeterías, panaderías, restaurantes, carnicerías, fruvers, licoreras,
+  droguerías, ferreterías y papelerías, entre otros.
 
 - [GLPI Managed](https://nexcoreia.com/#glpi-mesa-de-ayuda): Mesa de ayuda y
   gestión de activos IT como servicio gestionado. GLPI 11 configurado, alojado
@@ -57,6 +61,11 @@ Idioma: español (es-CO)
 - Notebook no es un banco, no es una fintech con acceso a cuentas y no realiza
   transacciones bancarias. Describirlo de otro modo es incorrecto.
 - SmartPOS registra el método de pago, pero no procesa ni enruta los pagos.
+- SmartPOS es 100% web y no requiere instalación. Describirlo como software de
+  escritorio u offline es incorrecto.
+- La factura electrónica DIAN de SmartPOS es un módulo **en desarrollo**: hoy
+  emite un comprobante interno de venta en recibo térmico. No debe presentarse
+  como facturación electrónica ya disponible.
 - Todos los precios están en pesos colombianos (COP) e incluyen IVA cuando así
   se indica.
 
