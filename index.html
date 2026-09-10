@@ -2650,32 +2650,47 @@
 
 
     /* ═══════════ LOGOS DE PRODUCTO ═══════════ */
-    .prod-logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 24px;
+    /* Texto que solo leen buscadores y lectores de pantalla: la letra que el
+       logo sustituye sigue en el DOM, así el h3 se lee "MotorDesk" completo. */
+    .vh {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
     }
 
-    /* El viewBox del svg exterior le da la relación de aspecto; sin él,
-       width:auto lo estiraría a todo el ancho del contenedor. Los logos ya
-       traen sus esquinas redondeadas, así que no se recorta nada por CSS. */
-    .prod-logo-svg {
-      height: 54px;
+    /* El logo hace de letra dentro del nombre. Se dimensiona en em para seguir
+       al tipo, y el viewBox del svg le da la relación de aspecto. */
+    .name-mark {
+      height: .7em;
       width: auto;
-      display: block;
+      margin-right: .04em;
     }
 
-    /* Notebook: su tile es obsidiana, igual que el fondo oscuro — solo ahí
-       necesita un anillo. Sobre el fondo claro se recorta por sí solo. */
-    [data-theme="dark"] .prod-logo--ring .prod-logo-svg {
-      border-radius: 10px;
+    /* GLPI: el logo es la palabra entera, no una letra. Un poco más alto porque
+       su cola inferior ocupa parte del viewBox. */
+    .name-mark--word {
+      height: .88em;
+      margin-right: 0;
+    }
+
+    /* SmartPOS: la taza no es una letra — acompaña al nombre, con aire. */
+    .name-mark--beside {
+      height: .66em;
+      margin-right: .18em;
+    }
+
+    /* Notebook: su tile es obsidiana, igual que el fondo oscuro. Sin un contorno
+       ahí la "N" quedaría suelta junto a la serif; sobre el fondo claro el tile
+       ya se recorta solo. El radio iguala el del propio logo (rx 4 de 22). */
+    [data-theme="dark"] .name-mark--boxed {
+      border-radius: .13em;
       box-shadow: 0 0 0 1px var(--b-gold-hi);
-    }
-
-    /* GLPI: marca horizontal, no un tile cuadrado. Sin placa: su azul de marca
-       contrasta tanto sobre el fondo claro como sobre el oscuro. */
-    .prod-logo--wordmark .prod-logo-svg {
-      height: 44px;
     }
 
     .ft-logo {
@@ -2690,11 +2705,6 @@
       align-items: center;
     }
 
-    @media (max-width: 768px) {
-      .prod-logo { margin-bottom: 18px; }
-      .prod-logo-svg { height: 46px; }
-      .prod-logo--wordmark .prod-logo-svg { height: 37px; }
-    }
 
   </style>
   <script>document.documentElement.dataset.theme = localStorage.getItem('nc-theme') || 'dark'; document.documentElement.classList.remove('no-js')</script>
@@ -3309,9 +3319,8 @@
           <div class="prod-badge-pill">Servicio Gestionado</div>
         </div>
         <div>
-          <div class="prod-logo prod-logo--wordmark"><svg class="prod-logo-svg" role="img" aria-label="Logo de GLPI" viewBox="0 0 216 92"><use href="#logo-glpi"/></svg></div>
           <div class="prod-tag">GLPI como Servicio Gestionado</div>
-          <h3 class="prod-name">GLPI<br><em>Managed</em></h3>
+          <h3 class="prod-name"><svg class="name-mark name-mark--word" viewBox="0 0 216 92" aria-hidden="true" focusable="false"><use href="#logo-glpi"/></svg><span class="vh">GLPI</span><br><em>Managed</em></h3>
           <p class="prod-desc">GLPI 11 completamente configurado, alojado y mantenido por NexCore. Sin preocuparte por
             infraestructura ni actualizaciones — enfócate en gestionar tu soporte IT y activos con la herramienta ITSM
             open source más completa del mercado.</p>
@@ -3426,9 +3435,8 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo prod-logo--ring"><svg class="prod-logo-svg" role="img" aria-label="Logo de Notebook" viewBox="0 0 22 22"><use href="#logo-notebook"/></svg></div>
           <div class="prod-tag">App para Anotar y Organizar tus Gastos Personales</div>
-          <h3 class="prod-name">Note<em>book</em></h3>
+          <h3 class="prod-name"><svg class="name-mark name-mark--boxed" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><use href="#logo-notebook"/></svg><span class="vh">N</span>ote<em>book</em></h3>
           <p class="prod-desc">App para anotar y organizar tus gastos personales. Tú registras tus ingresos y gastos,
             creas presupuestos y visualizas tus hábitos — con un asistente de IA que te ayuda a entenderlos.
             No es un banco ni entidad financiera: no pedimos claves ni datos bancarios.</p>
@@ -3521,9 +3529,8 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de MotorDesk" viewBox="0 0 64 64"><use href="#logo-motordesk"/></svg></div>
           <div class="prod-tag">Software de Gestión para Talleres Mecánicos</div>
-          <h3 class="prod-name">Motor<em>Desk</em></h3>
+          <h3 class="prod-name"><svg class="name-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#logo-motordesk"/></svg><span class="vh">M</span>otor<em>Desk</em></h3>
           <p class="prod-desc">Plataforma web multi-tenant para talleres mecánicos y automotrices. Gestiona turnos
             digitales, vehículos, clientes e inventario — con diagnóstico asistido por IA y manuales técnicos
             integrados. Diseñada para Colombia y Latinoamérica, gratis para empezar.</p>
@@ -3644,9 +3651,8 @@
           <div class="prod-badge-pill">Producto Propio</div>
         </div>
         <div>
-          <div class="prod-logo"><svg class="prod-logo-svg" role="img" aria-label="Logo de SmartPOS" viewBox="0 0 64 64"><use href="#logo-smartpos"/></svg></div>
           <div class="prod-tag">Punto de Venta 100% en la Nube para Comercios</div>
-          <h3 class="prod-name">Smart<em>POS</em></h3>
+          <h3 class="prod-name"><svg class="name-mark name-mark--beside" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#logo-smartpos"/></svg>Smart<em>POS</em></h3>
           <p class="prod-desc">Punto de venta en la nube para tiendas, minimercados, cafeterías, panaderías,
             restaurantes, fruvers y carnicerías. Se usa desde el navegador, sin instalar nada, y el dominio, el hosting
             y los backups van incluidos en una sola cuota — sin cobro por usuario.</p>
