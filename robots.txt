@@ -1,4 +1,4 @@
-# Robots.txt for NexCore — https://nexcoreia.com
+# Robots.txt for NexCoreIA — https://nexcoreia.com
 # Last updated: 2026-09-10
 
 # ─── Buscadores tradicionales ───────────────────────────────────────────────

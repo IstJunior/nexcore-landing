@@ -1,4 +1,4 @@
-# NexCore
+# NexCoreIA
 
 > Empresa de tecnología colombiana. Desarrolla y opera software propio para
 > empresas y comercios de Colombia y Latinoamérica, y presta servicios de
@@ -39,7 +39,7 @@ Idioma: español (es-CO)
 
 - [GLPI Managed](https://nexcoreia.com/#glpi-mesa-de-ayuda): Mesa de ayuda y
   gestión de activos IT como servicio gestionado. GLPI 11 configurado, alojado
-  y mantenido por NexCore: tickets y SLAs listos desde el primer día,
+  y mantenido por NexCoreIA: tickets y SLAs listos desde el primer día,
   inventario automatizado con GLPI Agent, CMDB, backups con política de
   retención y soporte incluido. Desde $1.800.000 COP de implementación única.
 

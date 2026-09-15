@@ -13,7 +13,7 @@ hereden el tema de la página; estos archivos quedan versionados como origen.
 
 ## Marcas propias
 
-Notebook, MotorDesk y SmartPOS son productos de NexCore. Sus colores de marca:
+Notebook, MotorDesk y SmartPOS son productos de NexCoreIA. Sus colores de marca:
 
 - Notebook — obsidiana `#0A0A0F` con la "N" en blanco.
 - MotorDesk — degradado naranja `#FB923C → #F97316 → #EA580C`, "M" en blanco.
@@ -23,7 +23,7 @@ Notebook, MotorDesk y SmartPOS son productos de NexCore. Sus colores de marca:
 
 `glpi-logo-color.svg` procede de los assets publicados por el proyecto GLPI
 (`glpi-project/glpi`, `public/pics/logos/sources/GLPI_Logo-color.svg`). GLPI es
-marca de Teclib', no de NexCore. Se usa aquí de forma descriptiva para
-identificar el software que NexCore implementa y gestiona como servicio. No
+marca de Teclib', no de NexCoreIA. Se usa aquí de forma descriptiva para
+identificar el software que NexCoreIA implementa y gestiona como servicio. No
 implica respaldo, afiliación ni certificación por parte de Teclib'. Si Teclib'
 solicita retirarlo, sustituir por la "G" estilizada propia.
