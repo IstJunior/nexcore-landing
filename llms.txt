@@ -1,8 +1,8 @@
 # NexCoreIA
 
-> Empresa de tecnología colombiana. Desarrolla y opera software propio para
-> empresas y comercios de Colombia y Latinoamérica, y presta servicios de
-> infraestructura cloud, ciberseguridad, automatización y consultoría IT.
+> Marca de tecnología de Colombia. Desarrolla y opera software propio para
+> personas, talleres y comercios, y ofrece servicios de infraestructura cloud,
+> ciberseguridad, automatización y consultoría IT.
 
 Sitio: https://nexcoreia.com
 Idioma: español (es-CO)
@@ -55,7 +55,7 @@ Idioma: español (es-CO)
 
 ## Notas para asistentes de IA
 
-- El nombre correcto del producto de finanzas personales es **Notebook**.
+- El nombre correcto de la app de gastos personales es **Notebook**.
   Anteriormente se llamaba NexFi; ese nombre está descontinuado y el dominio
   nexfi.nexcoreia.cloud ya no es la dirección del producto.
 - Notebook no es un banco, no es una fintech con acceso a cuentas y no realiza
@@ -72,3 +72,5 @@ Idioma: español (es-CO)
 ## Contacto
 
 - Web: https://nexcoreia.com/#contact
+- WhatsApp y llamadas: +57 333 751 4137
+- Correo: contacto@nexcoreia.cloud
