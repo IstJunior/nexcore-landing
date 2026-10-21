@@ -587,7 +587,7 @@
       pointer-events: none;
       z-index: 9998;
       transform: translate(-50%, -50%);
-      transition: all .2s ease;
+      transition: width .2s ease, height .2s ease, border-color .2s ease;
     }
 
     .nc-cur.big {
@@ -671,8 +671,11 @@
       transition: color .2s;
     }
 
-    .nav-links a:hover {
-      color: var(--gold);
+    @media (hover: hover) and (pointer: fine) {
+      .nav-links a:hover {
+        color: var(--gold);
+    
+      }
     }
 
     .btn-nav {
@@ -691,9 +694,12 @@
       transition: opacity .2s, transform .2s;
     }
 
-    .btn-nav:hover {
-      opacity: .85;
-      transform: translateY(-1px);
+    @media (hover: hover) and (pointer: fine) {
+      .btn-nav:hover {
+        opacity: .85;
+        transform: translateY(-1px);
+    
+      }
     }
 
     /* Ocultar elementos exclusivos de móvil en desktop */
@@ -896,9 +902,12 @@
       transition: opacity .2s, transform .2s;
     }
 
-    .btn-primary:hover {
-      opacity: .87;
-      transform: translateY(-2px);
+    @media (hover: hover) and (pointer: fine) {
+      .btn-primary:hover {
+        opacity: .87;
+        transform: translateY(-2px);
+    
+      }
     }
 
     .btn-ghost {
@@ -918,9 +927,12 @@
       transition: border-color .2s, background .2s;
     }
 
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      background: rgba(201, 168, 76, .05);
+    @media (hover: hover) and (pointer: fine) {
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        background: rgba(201, 168, 76, .05);
+    
+      }
     }
 
     .hero-scroll {
@@ -1121,9 +1133,12 @@
       transition: border-color .3s, background .3s;
     }
 
-    .pillar:hover {
-      border-color: var(--b-gold-hi);
-      background: var(--elevated);
+    @media (hover: hover) and (pointer: fine) {
+      .pillar:hover {
+        border-color: var(--b-gold-hi);
+        background: var(--elevated);
+    
+      }
     }
 
     .pillar-icon-wrap {
@@ -1144,8 +1159,11 @@
       height: 16px;
     }
 
-    .pillar:hover .pillar-icon-wrap {
-      background: linear-gradient(135deg, rgba(201, 168, 76, .38) 0%, rgba(201, 168, 76, .15) 100%);
+    @media (hover: hover) and (pointer: fine) {
+      .pillar:hover .pillar-icon-wrap {
+        background: linear-gradient(135deg, rgba(201, 168, 76, .38) 0%, rgba(201, 168, 76, .15) 100%);
+    
+      }
     }
 
     .pillar-name {
@@ -1182,8 +1200,11 @@
       transition: background .3s;
     }
 
-    .about-num-item:hover {
-      background: var(--graphite);
+    @media (hover: hover) and (pointer: fine) {
+      .about-num-item:hover {
+        background: var(--graphite);
+    
+      }
     }
 
     .about-num-item::before {
@@ -1199,8 +1220,11 @@
       transition: transform .4s cubic-bezier(.22, 1, .36, 1);
     }
 
-    .about-num-item:hover::before {
-      transform: scaleX(1);
+    @media (hover: hover) and (pointer: fine) {
+      .about-num-item:hover::before {
+        transform: scaleX(1);
+    
+      }
     }
 
     .about-num-n {
@@ -1301,12 +1325,18 @@
       transition: transform .42s cubic-bezier(.22, 1, .36, 1);
     }
 
-    .svc-card:hover {
-      background: var(--graphite);
+    @media (hover: hover) and (pointer: fine) {
+      .svc-card:hover {
+        background: var(--graphite);
+    
+      }
     }
 
-    .svc-card:hover::before {
-      transform: scaleX(1);
+    @media (hover: hover) and (pointer: fine) {
+      .svc-card:hover::before {
+        transform: scaleX(1);
+    
+      }
     }
 
     .svc-card .purple-glow {
@@ -1320,8 +1350,11 @@
       transition: opacity .4s;
     }
 
-    .svc-card:hover .purple-glow {
-      opacity: 1;
+    @media (hover: hover) and (pointer: fine) {
+      .svc-card:hover .purple-glow {
+        opacity: 1;
+    
+      }
     }
 
     .svc-n {
@@ -1352,8 +1385,11 @@
       height: 21px;
     }
 
-    .svc-card:hover .svc-ico-wrap {
-      background: linear-gradient(135deg, rgba(201, 168, 76, .38) 0%, rgba(201, 168, 76, .17) 100%);
+    @media (hover: hover) and (pointer: fine) {
+      .svc-card:hover .svc-ico-wrap {
+        background: linear-gradient(135deg, rgba(201, 168, 76, .38) 0%, rgba(201, 168, 76, .17) 100%);
+    
+      }
     }
 
     .svc-name {
@@ -1740,8 +1776,11 @@
       transition: color .2s;
     }
 
-    .ct-email:hover {
-      color: var(--smoke);
+    @media (hover: hover) and (pointer: fine) {
+      .ct-email:hover {
+        color: var(--smoke);
+    
+      }
     }
 
     /* ═══════════════════════════════════════════════
@@ -1794,8 +1833,11 @@
       transition: color .2s;
     }
 
-    .ft-links a:hover {
-      color: var(--gold);
+    @media (hover: hover) and (pointer: fine) {
+      .ft-links a:hover {
+        color: var(--gold);
+    
+      }
     }
 
     .ft-copy {
@@ -1829,9 +1871,12 @@
       transition: background .3s, border-color .3s, color .3s;
     }
 
-    .btn-theme-toggle:hover {
-      background: var(--elevated);
-      border-color: var(--b-gold-hi);
+    @media (hover: hover) and (pointer: fine) {
+      .btn-theme-toggle:hover {
+        background: var(--elevated);
+        border-color: var(--b-gold-hi);
+    
+      }
     }
 
     .btn-theme-toggle svg {
@@ -1894,9 +1939,12 @@
       transition: transform .25s, box-shadow .25s;
     }
 
-    .nc-float-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(0, 0, 0, .45);
+    @media (hover: hover) and (pointer: fine) {
+      .nc-float-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 28px rgba(0, 0, 0, .45);
+    
+      }
     }
 
     .nc-float-btn svg {
@@ -1909,8 +1957,11 @@
       color: #fff;
     }
 
-    .nc-float-wa:hover {
-      background: #20BD5A;
+    @media (hover: hover) and (pointer: fine) {
+      .nc-float-wa:hover {
+        background: #20BD5A;
+    
+      }
     }
 
     .nc-float-top {
@@ -1927,8 +1978,11 @@
       pointer-events: auto;
     }
 
-    .nc-float-top:hover {
-      background: var(--elevated);
+    @media (hover: hover) and (pointer: fine) {
+      .nc-float-top:hover {
+        background: var(--elevated);
+    
+      }
     }
 
     @media (max-width:768px) {
@@ -1970,9 +2024,12 @@
       z-index: 100;
     }
 
-    .nc-tooltip:hover::after {
-      opacity: 1;
-      transform: translateX(-50%) translateY(-4px);
+    @media (hover: hover) and (pointer: fine) {
+      .nc-tooltip:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    
+      }
     }
 
     /* ── Transición suave al cambiar tema ── */
@@ -2095,8 +2152,11 @@
       background: var(--carbon);
     }
 
-    [data-theme="light"] .about-num-item:hover {
-      background: var(--graphite);
+    @media (hover: hover) and (pointer: fine) {
+      [data-theme="light"] .about-num-item:hover {
+        background: var(--graphite);
+    
+      }
     }
 
     /* Pillar icons */
@@ -2104,8 +2164,11 @@
       background: linear-gradient(135deg, rgba(139, 105, 20, .2) 0%, rgba(139, 105, 20, .08) 100%);
     }
 
-    [data-theme="light"] .pillar:hover .pillar-icon-wrap {
-      background: linear-gradient(135deg, rgba(139, 105, 20, .38) 0%, rgba(139, 105, 20, .15) 100%);
+    @media (hover: hover) and (pointer: fine) {
+      [data-theme="light"] .pillar:hover .pillar-icon-wrap {
+        background: linear-gradient(135deg, rgba(139, 105, 20, .38) 0%, rgba(139, 105, 20, .15) 100%);
+    
+      }
     }
 
     /* Services */
@@ -2122,16 +2185,22 @@
       background: var(--obsidian);
     }
 
-    [data-theme="light"] .svc-card:hover {
-      background: var(--graphite);
+    @media (hover: hover) and (pointer: fine) {
+      [data-theme="light"] .svc-card:hover {
+        background: var(--graphite);
+    
+      }
     }
 
     [data-theme="light"] .svc-ico-wrap {
       background: linear-gradient(135deg, rgba(139, 105, 20, .2) 0%, rgba(139, 105, 20, .08) 100%);
     }
 
-    [data-theme="light"] .svc-card:hover .svc-ico-wrap {
-      background: linear-gradient(135deg, rgba(139, 105, 20, .38) 0%, rgba(139, 105, 20, .17) 100%);
+    @media (hover: hover) and (pointer: fine) {
+      [data-theme="light"] .svc-card:hover .svc-ico-wrap {
+        background: linear-gradient(135deg, rgba(139, 105, 20, .38) 0%, rgba(139, 105, 20, .17) 100%);
+    
+      }
     }
 
     [data-theme="light"] .svc-tag {
@@ -2296,9 +2365,12 @@
         transition: color .2s;
       }
 
+    @media (hover: hover) and (pointer: fine) {
       .nav-mobile-menu a:hover {
-        color: var(--gold);
+          color: var(--gold);
+      
       }
+    }
 
       @media (max-width:768px) {
         .nav-mobile-toggle {
@@ -2580,8 +2652,11 @@
 
     .faq-item summary::-webkit-details-marker { display: none; }
 
-    .faq-item summary:hover,
-    .faq-item[open] summary { color: var(--gold-hi); }
+    @media (hover: hover) and (pointer: fine) {
+      .faq-item summary:hover,
+    .faq-item[open] summary {   color: var(--gold-hi); 
+      }
+    }
 
     .faq-item summary::after {
       content: '';
@@ -2672,6 +2747,173 @@
     }
 
 
+
+    /* ═══════════════════════════════════════════════
+   MOVIMIENTO — una sola escala para toda la página
+   Entra con ease-out (arranca rápido, responde ya), nada
+   de ease-in; menos de 300 ms en lo que se toca; lo que se
+   ve una vez por visita (hero) puede tardar un poco más.
+══════════════════════════════════════════════════ */
+    :root {
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* Revelado al hacer scroll. El grupo de "transición de tema" más abajo
+       pisaba esta transición en .svc-card/.pillar/.about-num-item y esas
+       tarjetas aparecían de golpe: se juntan aquí las dos. */
+    .reveal {
+      transform: translateY(14px);
+      transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out),
+        background-color .4s ease, color .3s ease, border-color .35s ease;
+    }
+
+    .reveal.in {
+      transform: translateY(0);
+    }
+
+    /* Escalonado corto: 50 ms entre vecinos, no 80 */
+    .d1 { transition-delay: 50ms }
+    .d2 { transition-delay: 100ms }
+    .d3 { transition-delay: 150ms }
+    .d4 { transition-delay: 200ms }
+
+    /* Entrada del hero: antes todo estaba quieto 2,1 s; ahora ~1 s */
+    @keyframes fu {
+      from { opacity: 0; transform: translateY(16px) }
+      to { opacity: 1; transform: translateY(0) }
+    }
+
+    .hero-pill { animation: fu 500ms var(--ease-out) 40ms forwards }
+    .hero-h1 { animation: fu 700ms var(--ease-out) 100ms forwards }
+    .hero-foot { animation: fu 600ms var(--ease-out) 260ms forwards }
+    .hero-scroll { animation: fu 600ms var(--ease-out) 480ms forwards }
+
+    /* Todo lo que se presiona responde al dedo: transición solo de lo
+       que cambia, y un :active que confirma el toque. */
+    .btn-primary,
+    .btn-ghost,
+    .btn-nav {
+      transition: transform 160ms var(--ease-out), opacity 160ms ease,
+        border-color 160ms ease, background-color 160ms ease;
+    }
+
+    .btn-primary:active,
+    .btn-ghost:active,
+    .btn-nav:active {
+      transform: scale(0.97);
+    }
+
+    .nc-float-btn {
+      transition: transform 160ms var(--ease-out), box-shadow 200ms ease, background-color 160ms ease;
+    }
+
+    .nc-float-top {
+      transition: opacity 200ms ease, transform 160ms var(--ease-out), background-color 160ms ease;
+    }
+
+    .nc-float-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Tooltips: también con teclado, y salen desde el botón (abajo, centro) */
+    .nc-tooltip::after {
+      transform-origin: 50% 100%;
+      transform: translateX(-50%) translateY(-4px) scale(0.97);
+      transition: opacity 125ms var(--ease-out), transform 125ms var(--ease-out);
+    }
+
+    .nc-tooltip:focus-visible::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px) scale(1);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nc-tooltip:hover::after {
+        transform: translateX(-50%) translateY(-4px) scale(1);
+        transition-delay: 250ms;
+      }
+    }
+
+    /* Foco visible: con cursor propio no hay otra pista para quien usa teclado */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* Cursor propio: solo con puntero fino. Se mueve con transform
+       (antes era left/top, que recalcula el layout en cada fotograma). */
+    .nc-cur,
+    .nc-ring {
+      left: 0;
+      top: 0;
+      will-change: transform;
+    }
+
+    body {
+      cursor: auto;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      body {
+        cursor: none;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+
+      .nc-cur,
+      .nc-ring {
+        display: none;
+      }
+
+      .btn-primary,
+      .btn-ghost,
+      .btn-nav,
+      .btn-theme-toggle,
+      .svc-card {
+        cursor: pointer;
+      }
+    }
+
+    /* Menos movimiento, no cero: se queda el fundido, se va el desplazamiento */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .reveal.in {
+        transform: none;
+        transition: opacity 200ms ease;
+        transition-delay: 0ms;
+      }
+
+      @keyframes fu {
+        from { opacity: 0 }
+        to { opacity: 1 }
+      }
+
+      .hero-h1 {
+        transform: none;
+      }
+
+      .hero-pill-inner::before {
+        animation: none;
+      }
+
+      .nc-cur,
+      .nc-ring {
+        display: none;
+      }
+
+      body,
+      .btn-primary,
+      .btn-ghost,
+      .btn-nav {
+        cursor: auto;
+      }
+    }
   </style>
   <script>document.documentElement.dataset.theme = localStorage.getItem('nc-theme') || 'dark'; document.documentElement.classList.remove('no-js')</script>
 
@@ -3771,25 +4013,47 @@
   </footer>
 
   <script>
-    /* ── CURSOR ── */
+    /* ── CURSOR ── solo con puntero fino y sin "reducir movimiento";
+       el bucle corre mientras el cursor se mueve y se detiene al reposar. */
     const cur = document.getElementById('cur');
     const ring = document.getElementById('ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    (function tick() {
-      rx += (mx - rx) * .18; ry += (my - ry) * .18;
-      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(tick);
-    })();
-    document.querySelectorAll('a,button,.svc-card,.pillar,.about-num-item').forEach(el => {
-      el.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big'); });
-      el.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
-    });
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (finePointer && !reduceMotion) {
+      let mx = 0, my = 0, rx = 0, ry = 0, raf = 0;
+      const tick = () => {
+        rx += (mx - rx) * .18; ry += (my - ry) * .18;
+        cur.style.transform = `translate3d(${mx}px,${my}px,0) translate(-50%,-50%)`;
+        ring.style.transform = `translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`;
+        raf = (Math.abs(mx - rx) + Math.abs(my - ry) > .1) ? requestAnimationFrame(tick) : 0;
+      };
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        if (!raf) raf = requestAnimationFrame(tick);
+      }, { passive: true });
+      document.querySelectorAll('a,button,.svc-card,.pillar,.about-num-item').forEach(el => {
+        el.addEventListener('mouseenter', () => { cur.classList.add('big'); ring.classList.add('big'); });
+        el.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
+      });
+    }
 
     /* ── NAV ── */
     const navEl = document.getElementById('nav');
-    window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 60));
+    const progressEl = document.getElementById('progress');
+    const topBtn = document.getElementById('btnTop');
+    let scrollTicking = false;
+    function onScroll() {
+      const y = window.scrollY;
+      navEl.classList.toggle('scrolled', y > 60);
+      topBtn.classList.toggle('visible', y > 400);
+      const max = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressEl.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+      scrollTicking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScroll); }
+    }, { passive: true });
+    onScroll();
 
     /* ── REVEAL (Optimized) ── */
     const ro = new IntersectionObserver(entries => {
@@ -3807,7 +4071,7 @@
       a.addEventListener('click', e => {
         e.preventDefault();
         const t = document.querySelector(a.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth' });
+        if (t) t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
       });
     });
 
@@ -3827,31 +4091,10 @@
       btn.addEventListener('mouseleave', () => { cur.classList.remove('big'); ring.classList.remove('big'); });
     })();
 
-    // Progress Indicator
-    (function () {
-      const progress = document.getElementById('progress');
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        progress.style.width = scrolled + '%';
-      });
-    })();
-
-    // Floating Top Button
-    (function () {
-      const btn = document.getElementById('btnTop');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          btn.classList.add('visible');
-        } else {
-          btn.classList.remove('visible');
-        }
-      });
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
+    // Volver arriba
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
 
     // Contact Form Handler
     (function () {
